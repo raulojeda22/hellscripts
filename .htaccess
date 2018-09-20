@@ -1,4 +1,5 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . www/index.php
-RewriteRule ^$ www/index.php
+RewriteRule . www/index.php [L]
+RewriteRule ^$ www/index.php [L]
+Options +FollowSymLinks
