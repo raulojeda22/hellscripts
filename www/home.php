@@ -9,9 +9,9 @@
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/css/styles-merged.css">
-    <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/css/style.min.css">
-    <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/css/custom.css">
+    <link rel="stylesheet" href="<? echo _PUBLIC_URL_ ?>/css/styles-merged.css">
+    <link rel="stylesheet" href="<? echo _PUBLIC_URL_ ?>/css/style.min.css">
+    <link rel="stylesheet" href="<? echo _PUBLIC_URL_ ?>/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -61,7 +61,7 @@
   <!-- END: header -->
   <section class="probootstrap-slider flexslider">
     <ul class="slides">
-      <li style="background-image: url(<? echo _PROJECT_URL_ ?>/img/slider_1.jpg);">
+      <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_1.jpg);">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
@@ -73,7 +73,7 @@
           </div>
         </div>
       </li>
-      <li style="background-image: url(<? echo _PROJECT_URL_ ?>/img/slider_2.jpg);">
+      <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_2.jpg);">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
@@ -85,7 +85,7 @@
           </div>
         </div>
       </li>
-      <li style="background-image: url(<? echo _PROJECT_URL_ ?>/img/slider_3.jpg);">
+      <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_3.jpg);">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
@@ -207,7 +207,7 @@
           <figure>
             <div class="probootstrap-video">
               <a href="https://vimeo.com/45830194" class="popup-vimeo probootstrap-video-play"><i class="icon-play3"></i></a>
-              <img src="<? echo _PROJECT_URL_ ?>/img/slider_2.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com" class="img-responsive img-border">
+              <img src="<? echo _PUBLIC_URL_ ?>/img/slider_2.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com" class="img-responsive img-border">
             </div>
             <figcaption>This is a caption. Far far away, behind the word mountains.</figcaption>
           </figure>
@@ -240,7 +240,7 @@
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-card">
             <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="<? echo _PROJECT_URL_ ?>/img/slider_1.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+              <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/img/slider_1.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
             </div>
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading mb0">A Clever Bike</h2>
@@ -253,7 +253,7 @@
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-card">
             <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="<? echo _PROJECT_URL_ ?>/img/slider_2.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+              <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/img/slider_2.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
             </div>
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading mb0">Sleek Spaker</h2>
@@ -266,7 +266,7 @@
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-card">
             <div class="probootstrap-card-media">
-              <a href="single-page.html"><img src="<? echo _PROJECT_URL_ ?>/img/slider_3.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+              <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/img/slider_3.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
             </div>
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading mb0">Black Person</h2>
@@ -351,9 +351,9 @@
   <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
   </div>
-  <script src="<? echo _PROJECT_URL_ ?>/js/scripts.min.js"></script>
-  <script src="<? echo _PROJECT_URL_ ?>/js/main.min.js"></script>
-  <script src="<? echo _PROJECT_URL_ ?>/js/custom.js"></script>
+  <script src="<? echo _PUBLIC_URL_ ?>/js/scripts.min.js"></script>
+  <script src="<? echo _PUBLIC_URL_ ?>/js/main.min.js"></script>
+  <script src="<? echo _PUBLIC_URL_ ?>/js/custom.js"></script>
 
   
   </body>
