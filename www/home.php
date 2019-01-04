@@ -1,13 +1,13 @@
 <div class="probootstrap-loader"></div>
 <section class="probootstrap-slider flexslider">
   <ul class="slides">
-    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_1.jpg);">
+    <li class="py-2" style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_1.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text probootstrap-animate">
-              <h2>Less is more.</h2>
-              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Get Started</a></p>
+              <h3>Join other developers.</h3>
+              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
           </div>
         </div>
@@ -18,8 +18,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text probootstrap-animate">
-              <h2>Black is elegant.</h2>
-              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Get Started</a></p>
+              <h3>Help build something big.</h3>
+              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
           </div>
         </div>
@@ -30,8 +30,32 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text probootstrap-animate">
-              <h2>Whitespace is clever.</h2>
-              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Get Started</a></p>
+              <h3>Learn and share knowledge.</h3>
+              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/bike.png);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="slides-text probootstrap-animate">
+              <h3>Improve the world with your contributions.</h3>
+              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_3.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="slides-text probootstrap-animate">
+              <h3>Start your own project and get helped by the community.</h3>
+              <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
           </div>
         </div>
@@ -52,8 +76,7 @@
           </div>
           <div class="text">
             <h3 class="heading">Business Strategy</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts. </p>
+            <p>Far far away, behind the word mountains</p>
             <p><a href="single-page.html">Learn more</a></p>
           </div>
 
@@ -66,8 +89,7 @@
           </div>
           <div class="text">
             <h3 class="heading">Business Marketing</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts. </p>
+            <p>Far far away, behind the word mountains</p>
             <p><a href="single-page.html">Learn more</a></p>
           </div>
         </div>
@@ -79,8 +101,7 @@
           </div>
           <div class="text">
             <h3 class="heading">Business Profit</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts. </p>
+            <p>Far far away, behind the word mountains</p>
             <p><a href="single-page.html">Learn more</a></p>
           </div>
         </div>
@@ -169,18 +190,6 @@
   </div>
 </div>
 <!-- END section -->
-
-
-<div class="container">
-  <div class="probootstrap-cta probootstrap-animate">
-    <h2 class="mb20">Create a beautiful templates to benefits many.</h2>
-    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-      texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    <p><a href="#" role="button" class="btn btn-primary">Get started</a></p>
-  </div>
-</div>
-
-<!-- END section cta -->
 
 <section class="probootstrap-section">
   <div class="container">
