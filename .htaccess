@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ frontend/index.php
+RewriteRule ^(.*)$ www/index.php
 Options +FollowSymLinks
