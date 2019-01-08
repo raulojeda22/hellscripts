@@ -1,7 +1,7 @@
 <div class="probootstrap-loader"></div>
 <section class="probootstrap-slider flexslider">
   <ul class="slides">
-    <li class="py-2" style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_1.jpg);">
+    <li class="py-2" style="background-image: url(<? echo _PUBLIC_URL_ ?>/view/img/slider_1.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -13,7 +13,7 @@
         </div>
       </div>
     </li>
-    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_2.jpg);">
+    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/view/img/slider_2.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </li>
-    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_3.jpg);">
+    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/view/img/slider_3.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </li>
-    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/bike.png);">
+    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/view/img/bike.png);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -49,7 +49,7 @@
         </div>
       </div>
     </li>
-    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/img/slider_3.jpg);">
+    <li style="background-image: url(<? echo _PUBLIC_URL_ ?>/view/img/slider_3.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -179,7 +179,7 @@
         <figure>
           <div class="probootstrap-video">
             <a href="https://vimeo.com/45830194" class="popup-vimeo probootstrap-video-play"><i class="icon-play3"></i></a>
-            <img src="<? echo _PUBLIC_URL_ ?>/img/slider_2.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com"
+            <img src="<? echo _PUBLIC_URL_ ?>/view/img/slider_2.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com"
               class="img-responsive img-border">
           </div>
           <figcaption>This is a caption. Far far away, behind the word mountains.</figcaption>
@@ -202,7 +202,7 @@
       <div class="col-md-4 probootstrap-animate">
         <div class="probootstrap-card">
           <div class="probootstrap-card-media">
-            <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/img/slider_1.jpg" class="img-responsive img-border"
+            <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/view/img/slider_1.jpg" class="img-responsive img-border"
                 alt="Free HTML5 Template by uicookies.com"></a>
           </div>
           <div class="probootstrap-card-text">
@@ -218,7 +218,7 @@
       <div class="col-md-4 probootstrap-animate">
         <div class="probootstrap-card">
           <div class="probootstrap-card-media">
-            <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/img/slider_2.jpg" class="img-responsive img-border"
+            <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/view/img/slider_2.jpg" class="img-responsive img-border"
                 alt="Free HTML5 Template by uicookies.com"></a>
           </div>
           <div class="probootstrap-card-text">
@@ -234,7 +234,7 @@
       <div class="col-md-4 probootstrap-animate">
         <div class="probootstrap-card">
           <div class="probootstrap-card-media">
-            <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/img/slider_3.jpg" class="img-responsive img-border"
+            <a href="single-page.html"><img src="<? echo _PUBLIC_URL_ ?>/view/img/slider_3.jpg" class="img-responsive img-border"
                 alt="Free HTML5 Template by uicookies.com"></a>
           </div>
           <div class="probootstrap-card-text">
