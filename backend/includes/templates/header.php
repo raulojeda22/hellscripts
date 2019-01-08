@@ -8,28 +8,12 @@
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
             <ul class="probootstrap-main-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a href="<? echo _PUBLIC_URL_.'/home' ?>">Home</a></li>
+                <li><a href="<? echo _PUBLIC_URL_.'/projects' ?>">Projects</a></li>
+                <li><a href="<? echo _PUBLIC_URL_.'/developers' ?>">Developers</a></li>
+                <li><a href="<? echo _PUBLIC_URL_.'/groups' ?>">Groups</a></li>
+                <li><a href="<? echo _PUBLIC_URL_.'/profile' ?>">Profile</a></li>
             </ul>
-            <ul class="probootstrap-right-nav hidden-xs">
-                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                <li><a href="#"><i class="icon-instagram2"></i></a></li>
-            </ul>
-            <div class="extra-text visible-xs"> 
-                <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-                <h5>Address</h5>
-                <p>198 West 21th Street, Suite 721 New York NY 10016</p>
-                <h5>Connect</h5>
-                <ul class="social-buttons">
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram2"></i></a></li>
-                </ul>
-            </div>
         </nav>
     </div>
 </header>
