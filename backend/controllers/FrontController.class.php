@@ -19,12 +19,13 @@ class FrontController {
 
     public function run(){
         $allowedPages=$this->getAllowedPages();
+        error_log(print_r($this->uri,1));
+        var_dump(dirname(__FILE__));
+        var_dump($this->uri);
+        var_dump(_PROJECT_URL_);
         include_once dirname(__FILE__).'/../includes/templates/start.php';
         include_once dirname(__FILE__).'/../includes/templates/head.php';
         include_once dirname(__FILE__).'/../includes/templates/header.php';
-        error_log(print_r($this->uri,1));
-        var_dump($this->uri);
-        var_dump(_PROJECT_URL_);
         if (in_array($this->uri,$allowedPages)){
             include_once $this->uri.".php";
         }else if($this->uri==""||$this->uri=="/"){
