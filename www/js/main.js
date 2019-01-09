@@ -337,8 +337,8 @@
 	    animation: "fade",
 	    prevText: "",
 	    nextText: "",
-	    slideshowSpeed: 2000, // speed of slides
-	    animationSpeed: 600,
+	    slideshowSpeed: 4000, // speed of slides
+	    animationSpeed: 1000,
 	    slideshow: true,
 	    directionNav: false,
 	    controlNav: true
@@ -354,6 +354,17 @@
 	    controlNav: false
 	  });
 	}
+
+	var selectActivePanel = function() {
+		var pathname = window.location.pathname.split('/').slice(-1).pop();
+		console.log(pathname);
+		//Estaves fent coses ací
+		$('.bannerItem').removeClass('active');
+		$('#'+pathname).addClass('active');
+		if(pathname=='hellscripts'){
+			$('#home').addClass('active');
+		}
+	  }
 
 	
 	/*----------------------------------------
@@ -564,6 +575,7 @@
 	$(window).load(function(){
 		owlCarousel();
 		flexSlider();
+		selectActivePanel();
 	});
 
 	

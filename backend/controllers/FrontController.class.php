@@ -12,7 +12,11 @@ class FrontController {
 
     private function getAllowedPages(){
         $allowedPages=array(
-            'home'
+            'home',
+            'projects',
+            'developers',
+            'groups',
+            'profile'
         );
         return $allowedPages;
     }
