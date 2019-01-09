@@ -361,7 +361,7 @@
 		//Estaves fent coses ací
 		$('.bannerItem').removeClass('active');
 		$('#'+pathname).addClass('active');
-		if(pathname=='hellscripts'){
+		if(pathname=='hellscripts'||pathname==""){
 			$('#home').addClass('active');
 		}
 	  }
