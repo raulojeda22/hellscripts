@@ -721,14 +721,14 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 .probootstrap-footer-widget {
   float: left;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .probootstrap-footer-widget .heading {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: .1em;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 
@@ -744,12 +744,12 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 .probootstrap-footer {
   border-top: 2px solid rgba(255, 255, 255, 0.1);
-  padding: 5em 0;
+  padding: 2em 0;
 }
 
 @media screen and (max-width: 768px) {
   .probootstrap-footer {
-    padding: 3em 0;
+    padding: 2em 0;
   }
 }
 
@@ -757,7 +757,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  padding: 8em 0;
+  padding: 4em 0;
   position: relative;
 }
 

@@ -59,7 +59,6 @@ class ControllerCore{
         return $query;
     }
     protected function buildDeleteQuery($data){
-        //$sql = "DELETE FROM usuario WHERE data='$data'";
         $query = 'DELETE FROM '.$tableName;
         $query .= $this->addWhereStatement($data);
         return $query;
