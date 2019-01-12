@@ -1,9 +1,9 @@
-$(function() {
+function loadDatePicker(){
     $('.datePicker').datepicker({
         dateFormat: 'dd/mm/yy', 
-        changeMonth: true, 
-        changeYear: true, 
+        changeMonth: false, 
+        changeYear: false, 
         yearRange: '0:+2',
         minDate: 0,
     });
-});
+}

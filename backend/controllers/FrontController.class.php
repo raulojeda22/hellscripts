@@ -29,7 +29,7 @@ class FrontController {
         if (in_array($this->uri,$allowedPages)){
             include_once 'modules/'.$this->uri.'/view/'.$this->uri.".php";
         }else if($this->uri==""||$this->uri=="/"){
-            include_once "home.php";
+            include_once "modules/home/view/home.php";
         }else {
             include_once "404.php";
         }

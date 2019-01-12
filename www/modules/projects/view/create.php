@@ -1,11 +1,7 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
-<script src="<? echo _PROJECT_URL_; ?>/js/datePicker.js"></script>
 <div class="container">
     <form action="#" method="post" class="probootstrap-form mb60">
         <div class="form-group">
-            <label for="fname">Name</label>
+            <label for="fname">Name*</label>
             <input type="text" class="form-control" id="fname" name="fname">
         </div>
         <div class="form-group">
@@ -28,17 +24,24 @@
             </div>
             <div class="col-md-6">
                 <h3>Privacy</h3>
-                Public <input name="privacy" type="radio" value="public" checked>
-                Protected <input name="privacy" type="radio" value="protected">
-                Private <input name="privacy" type="radio" value="private">
+                <div class="toggle_radio">
+                    <input type="radio" checked class="toggle_option" id="first_toggle" name="toggle_option">
+                    <input type="radio" class="toggle_option" id="second_toggle" name="toggle_option">
+                    <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
+                    <label for="first_toggle"><p>Public</p></label>
+                    <label for="second_toggle"><p>Protected</p></label>
+                    <label for="third_toggle"><p>Private</p></label>
+                <div class="toggle_option_slider"></div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <h3>Programming languages:</h3> <h4 class="text-muted">(Separate them in commas)</h4>
             <textarea cols="30" rows="10" class="form-control" id="message" name="message"></textarea>
         </div>
-        <div class="form-group">
-            <input name="endDate" type="text" class="datePicker">
+        <div class="form-group"> <!-- Date input -->
+            <label class="control-label" for="date">Expected end date</label>
+            <input class="form-control datePicker" id="date" name="date" placeholder="DD/MM/YYY" type="text"/>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-primary" id="submit" name="submit">Create</button>
