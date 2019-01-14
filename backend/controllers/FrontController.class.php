@@ -25,6 +25,7 @@ class FrontController {
         $allowedPages=$this->getAllowedPages();
         include_once dirname(__FILE__).'/../includes/templates/start.php';
         include_once dirname(__FILE__).'/../includes/templates/head.php';
+        include_once dirname(__FILE__).'/../includes/templates/corejs.php';
         include_once dirname(__FILE__).'/../includes/templates/header.php';
         if (in_array($this->uri,$allowedPages)){
             include_once 'modules/'.$this->uri.'/view/'.$this->uri.".php";
@@ -34,7 +35,6 @@ class FrontController {
             include_once "404.php";
         }
         include_once dirname(__FILE__).'/../includes/templates/footer.php';
-        include_once dirname(__FILE__).'/../includes/templates/corejs.php';
         include_once dirname(__FILE__).'/../includes/templates/end.php';
     }
 }
