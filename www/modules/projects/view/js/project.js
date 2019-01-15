@@ -8,6 +8,7 @@ $(document).ready(function() {
                 $.ajax({
                     url: "www/modules/projects/view/projectDiv.php",
                     type: 'POST',
+                    async: false,
                     data: { data: element},
                     success: function(data) {
                         $('#allProjects').append(data);
@@ -17,6 +18,23 @@ $(document).ready(function() {
                     }
                 });
             });
+            $(".projectGet, .projectUpdate, .projectDelete").click(function(){
+                var projectId=$(this).parent().attr('id').replace('project','');
+                var method=$(this).attr('name');
+                object = {id: projectId}
+                console.log(object);
+                $.ajax({
+                    url: "www/modules/projects/model/projects.php?id="+projectId,
+                    type: method,
+                    data: {data: JSON.stringify(object)},
+                    success: function (data){
+                        console.log(data);
+                    },
+                    error: function (data){
+                        console.log(data);
+                    }
+                });
+            })
         },
         error: function (data) {
             console.log(data);
