@@ -4,8 +4,7 @@ class ModelController extends ControllerCore{
 
     public function GET($data){
         $query=$this->buildGetQuery($data);
-        error_log($query);
-        return $this->runQuery($query)->fetch_object();
+        return $this->runQuery($query);
     }
 
     public function POST($data){

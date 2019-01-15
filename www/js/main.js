@@ -357,8 +357,6 @@
 
 	var selectActivePanel = function() {
 		var pathname = window.location.pathname.split('/').slice(-1).pop();
-		console.log(pathname);
-		//Estaves fent coses ací
 		$('.bannerItem').removeClass('active');
 		$('#'+pathname).addClass('active');
 		if(pathname=='hellscripts'||pathname==""){

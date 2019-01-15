@@ -4,7 +4,19 @@ $(document).ready(function() {
         type: 'GET',
         success: function (data) {
             data=JSON.parse(data);
-            console.log(data);
+            data.forEach(element => {
+                $.ajax({
+                    url: "www/modules/projects/view/projectDiv.php",
+                    type: 'POST',
+                    data: { data: element},
+                    success: function(data) {
+                        $('#allProjects').append(data);
+                    },
+                    error: function(data){
+                        console.log(data);
+                    }
+                });
+            });
         },
         error: function (data) {
             console.log(data);
@@ -20,7 +32,8 @@ $(document).ready(function() {
                 $("#projectPageContent").append(data);
                 loadDatePicker();
             },
-            error: function () {
+            error: function (data) {
+                console.log(data);
             }
         });
         $("#projectFormButton").click(function(){
@@ -29,11 +42,9 @@ $(document).ready(function() {
                 var name = $(this).attr('name');
                 object = Object.assign({[name]: $(this).val()},object);
             });
-            console.log(object);
             $.ajax({
                 url: 'www/modules/projects/model/projects.php',
-                method: 'POST',
-                type: 'json',
+                type: 'POST',
                 data: {data: JSON.stringify(object)},
                 success: function(data){
                     console.log(data);
@@ -43,6 +54,5 @@ $(document).ready(function() {
                 }
             });
         });
-    });
-    
+    });    
 });
