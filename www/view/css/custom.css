@@ -70,3 +70,16 @@
     background: rgba(255,255,255,.3);
     left: 215px;
   }
+
+.ui-widget-content {
+  border: 1px solid #000000;
+  background: #000000 url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
+  color: #ffffff;
+}
+
+.ui-widget-header {     
+  border: 1px solid #ae0014;
+  background: #ae0014;
+  color: #000000;
+  font-weight: bold;
+}

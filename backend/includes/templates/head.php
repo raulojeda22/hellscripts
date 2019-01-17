@@ -8,6 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/view/css/styles-merged.css">
   <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/view/css/style.min.css">
-  <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/view/css/custom.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="<? echo _PROJECT_URL_ ?>/view/css/custom.css">
 </head>
