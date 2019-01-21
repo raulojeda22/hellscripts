@@ -72,14 +72,21 @@
   }
 
 .ui-widget-content {
-  border: 1px solid #000000;
-  background: #000000 url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
-  color: #ffffff;
+  border: 1px solid #000000 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 .ui-widget-header {     
-  border: 1px solid #ae0014;
-  background: #ae0014;
-  color: #000000;
-  font-weight: bold;
+  border: 1px solid #ae0014 !important;
+  background: #ae0014 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: 1px solid #ae0014 !important;
+  background: #ae0014 !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
 }

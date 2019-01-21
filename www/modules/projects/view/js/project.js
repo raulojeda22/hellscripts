@@ -6,12 +6,12 @@ $(document).ready(function() {
             data=JSON.parse(data);
             data.forEach(element => {
                 $.ajax({
-                    url: "www/modules/projects/view/projectDiv.php", //SHOW PROJECTS
+                    url: "www/modules/projects/view/projectTBody.php", //SHOW PROJECTS
                     type: 'POST',
                     async: false,
                     data: { data: element},
                     success: function(data) {
-                        $('#allProjects').append(data);
+                        $('#allTableProjectsBody').append(data);
                     },
                     error: function(data){
                         console.log(data);
@@ -19,7 +19,8 @@ $(document).ready(function() {
                 });
             });
             $(".projectGet,  .projectDelete").click(function(){  //GET OR DELETE PROJECTS
-                var projectId=$(this).parent().attr('id').replace('project','');
+                var parent=$(this).parent().parent();
+                var projectId=parent.attr('id').replace('project','');
                 var method=$(this).attr('name');
                 object = {id: projectId}
                 $.ajax({
@@ -52,6 +53,8 @@ $(document).ready(function() {
                                     duration: 1000
                                 }
                             });
+                        } else if(method=='DELETE'){
+                            parent.remove();
                         }
                     },
                     error: function (data){
@@ -95,6 +98,19 @@ $(document).ready(function() {
                     console.log(data);
                 }
             });
+        });
+    });   
+    $("#deleteAllProjects").click(function(){  //SHOW PROJECT FORM
+        $.ajax({
+            url: "www/modules/projects/model/projects.php",
+            type: 'DELETE',
+            success: function (data){
+                data=JSON.parse(data)[0];
+                $('#allTableProjectsBody').empty();
+            },
+            error: function (data){
+
+            }
         });
     });    
 });

@@ -12,3 +12,4 @@
 
 <!-- INTERNAL -->
 <script src="<? echo _PROJECT_URL_; ?>/js/datePicker.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
+<script src="<? echo _PROJECT_URL_ ?>/modules/home/view/js/home.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>

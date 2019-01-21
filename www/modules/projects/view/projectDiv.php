@@ -10,7 +10,7 @@
             <div class="row text-center" id="project<? echo $_POST['data']['id']; ?>">
                 <button class="btn btn-primary btn-sm projectGet" name="GET">Get</button>
                 <button class="btn btn-primary btn-sm projectUpdate" name="PUT">Update</button>
-                <button class="btn btn-primary btn-sm projectDelete" name="DELETE">Delete</button>                
+                <button class="btn btn-primary btn-sm projectDelete" name="DELETE">Delete</button>
             </div>
         </div>
     </div>
