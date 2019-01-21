@@ -12,12 +12,45 @@ $(document).ready(function() {
                     data: { data: element},
                     success: function(data) {
                         $('#allTableProjectsBody').append(data);
+                        $('#allJqWidgetsProjectsBody').append(data);
                     },
                     error: function(data){
                         console.log(data);
                     }
                 });
             });
+            $('#allTableProjects').DataTable(); //Change table styles
+            var source =
+            {
+                localData: generatedata(200),
+                dataType: "array",
+                datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+            $('#allJqWidgetsProjectsBody').jqxDataTable(
+                {
+                    width: '100%',
+                    source: dataAdapter,                
+                    pageable: true,
+                    pagerMode: 'advanced',
+                    altRows: true,
+                    columns: [
+                      { text: 'Name', dataField: 'firstname', width: 150 },
+                      { text: 'Last Name', dataField: 'lastname', width: 150 },
+                      { text: 'Product', editable: false, dataField: 'productname', width: 250 },
+                      { text: 'Quantity', dataField: 'quantity', width: 80, cellsalign: 'right' },
+                      { text: 'Unit Price', dataField: 'price', width: 80, cellsalign: 'right', cellsFormat: 'c2' },
+                      { text: 'Total', dataField: 'total', cellsalign: 'right', cellsFormat: 'c2' }
+                    ]
+                }); 
             $(".projectGet,  .projectDelete").click(function(){  //GET OR DELETE PROJECTS
                 var parent=$(this).parent().parent();
                 var projectId=parent.attr('id').replace('project','');

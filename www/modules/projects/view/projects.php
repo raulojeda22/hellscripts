@@ -22,8 +22,11 @@
                 <h2  class="mb20">Projects</h2>
             </div>
         </div>
-        <div class="table-responsive" id="allTableProjects" >
-            <table class="table table-condensed table-dark">
+        <div>
+            <h3>Datatables</h3>
+        </div>
+        <div class="table-responsive" id="allTableProjectsDiv" >
+            <table class="table table-condensed table-dark" id="allTableProjects">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -33,14 +36,23 @@
                         <th>License</th>
                         <th>Privacy</th>
                         <th>Languages</th>
-                        <th>Start date</th>
-                        <th>End date</th>
+                        <th>Get</th>
+                        <th>Update</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody id="allTableProjectsBody">
                     
                 </tbody>
             </table>
+        </div>
+        <div>
+            <h3>JqWidgets</h3>
+        </div>
+        <div class="table-responsive" id="allJqWidgetsProjectsDiv" >
+            
+        </div>
+        <div>
         </div>
     </div>
     <script src="<? echo _PROJECT_URL_ ?>/modules/projects/view/js/project.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
@@ -91,3 +103,4 @@
         </div>
     </div>
 </section>
+
