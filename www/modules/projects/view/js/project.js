@@ -12,44 +12,47 @@ $(document).ready(function() {
                     data: { data: element},
                     success: function(data) {
                         $('#allTableProjectsBody').append(data);
-                        $('#allJqWidgetsProjectsBody').append(data);
                     },
                     error: function(data){
                         console.log(data);
                     }
                 });
             });
+            jqWidgetData=data[0];
+            var dataFieldsArray=[];
+            var dataColumnsArray=[];
+            var dataType='string';
+            $.each(jqWidgetData, function(key,value){
+                if(isNaN(value)){
+                    type='string';
+                } else {
+                    type='number';
+                }
+                dataFieldsArray.push({ name: key, type: dataType });
+                dataColumnsArray.push({ text: key, dataField: key});
+            });
             $('#allTableProjects').DataTable(); //Change table styles
+            var url = "www/modules/projects/model/projecasdfadsfts.php"; 
             var source =
             {
-                localData: generatedata(200),
-                dataType: "array",
-                datafields:
-                [
-                    { name: 'firstname', type: 'string' },
-                    { name: 'lastname', type: 'string' },
-                    { name: 'productname', type: 'string' },
-                    { name: 'quantity', type: 'number' },
-                    { name: 'price', type: 'number' },
-                    { name: 'total', type: 'number' }
-                ]
+                dataType: 'array',
+                localData: data,
+                datafields: dataFieldsArray,
+                id: 'id'
             };
             var dataAdapter = new $.jqx.dataAdapter(source);
-            $('#allJqWidgetsProjectsBody').jqxDataTable(
+            $('#allJqWidgetsProjectsDiv').jqxDataTable(
                 {
                     width: '100%',
-                    source: dataAdapter,                
+                    theme: 'metrodark',
+                    pagerButtonsCount: 10,
+                    source: dataAdapter,
+                    sortable: true,
                     pageable: true,
-                    pagerMode: 'advanced',
                     altRows: true,
-                    columns: [
-                      { text: 'Name', dataField: 'firstname', width: 150 },
-                      { text: 'Last Name', dataField: 'lastname', width: 150 },
-                      { text: 'Product', editable: false, dataField: 'productname', width: 250 },
-                      { text: 'Quantity', dataField: 'quantity', width: 80, cellsalign: 'right' },
-                      { text: 'Unit Price', dataField: 'price', width: 80, cellsalign: 'right', cellsFormat: 'c2' },
-                      { text: 'Total', dataField: 'total', cellsalign: 'right', cellsFormat: 'c2' }
-                    ]
+                    filterable: true,
+                    columnsResize: true,
+                    columns: dataColumnsArray
                 }); 
             $(".projectGet,  .projectDelete").click(function(){  //GET OR DELETE PROJECTS
                 var parent=$(this).parent().parent();

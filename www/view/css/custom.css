@@ -121,3 +121,23 @@ div.dataTables_wrapper div.dataTables_length select {
   border-color: #ae0014 !important;
   color: #fff !important;
 }
+
+.jqx-widget-metrodark .jqx-grid-cell-selected-metrodark, .jqx-grid-cell-selected-metrodark {
+  background-color: #ae0014 !important;
+  border-color: #ae0014 !important;
+}
+
+.jqx-fill-state-hover-metrodark {
+  border-color: #cf031b !important;
+  background-color: #cf031b  !important;
+}
+
+.jqx-fill-state-pressed-metrodark {
+  border-color: #ae0014 !important;
+  background-color: #ae0014 !important;
+}
+
+.jqx-widget-content-metrodark {
+  border-color: rgb(45, 45, 49) !important;
+  background-color: #121213 !important;
+}
