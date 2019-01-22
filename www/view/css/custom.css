@@ -123,13 +123,13 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 
 .jqx-widget-metrodark .jqx-grid-cell-selected-metrodark, .jqx-grid-cell-selected-metrodark {
-  background-color: #ae0014 !important;
-  border-color: #ae0014 !important;
+  border-color: #cf031b !important;
+  background-color: #cf031b  !important;
 }
 
 .jqx-fill-state-hover-metrodark {
-  border-color: #cf031b !important;
-  background-color: #cf031b  !important;
+  background-color: #ae0014 !important;
+  border-color: #ae0014 !important;
 }
 
 .jqx-fill-state-pressed-metrodark {
@@ -140,4 +140,8 @@ div.dataTables_wrapper div.dataTables_length select {
 .jqx-widget-content-metrodark {
   border-color: rgb(45, 45, 49) !important;
   background-color: #121213 !important;
+}
+
+.flexslider, .flexslider .slides > li, .flexslider2, .flexslider2 .slides > li, .slider-height {
+  height: 350px !important;
 }

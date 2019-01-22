@@ -12,6 +12,10 @@
             <label for="email">Website</label>
             <input type="email" class="form-control projectFormElement" id="email" name="website">
         </div>
+        <div class="form-group">
+            <label for="image">Image url</label>
+            <input type="image" class="form-control projectFormElement" id="image" name="image">
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <h3>License</h3>

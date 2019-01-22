@@ -18,7 +18,49 @@ $(document).ready(function() {
                     }
                 });
             });
-            
+            $(".projectGet").click(function(){  //GET PROJECTS
+                var parent=$(this).parent();
+                var projectId=parent.attr('id').replace('project','');
+                var method=$(this).attr('name');
+                object = {id: projectId}
+                $.ajax({
+                    url: "www/modules/projects/model/projects.php?id="+projectId,
+                    type: method,
+                    success: function (data){
+                        data=JSON.parse(data)[0];
+                        if (method=='GET'){
+                            $.each(data, function(key,value){
+                                $('#'+key+'ProjectModal').html(value);
+                            });
+                            $("#details_project").show();
+                            $("#project_modal").dialog({
+                                width: 850,
+                                height: 500,
+                                resizable: "false",
+                                modal: "true",
+                                buttons: {
+                                    Ok: function () {
+                                        $(this).dialog("close");
+                                    }
+                                },
+                                show: {
+                                    effect: "blind",
+                                    duration: 1000
+                                },
+                                hide: {
+                                    effect: "explode",
+                                    duration: 1000
+                                }
+                            });
+                        } else if(method=='DELETE'){
+                            parent.remove();
+                        }
+                    },
+                    error: function (data){
+                        console.log(data);
+                    }
+                });
+            })
         },
         error: function (data) {
             console.log(data);

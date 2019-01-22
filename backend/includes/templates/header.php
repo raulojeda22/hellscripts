@@ -10,6 +10,7 @@
             <ul class="probootstrap-main-nav">
                 <li id="home" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/home' ?>">Home</a></li>
                 <li id="projects" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/projects' ?>">Projects</a></li>
+                <li id="jqWidgets" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/jqWidgets' ?>">JqWidgets</a></li>
                 <li id="developers" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/developers' ?>">Developers</a></li>
                 <li id="groups" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/groups' ?>">Groups</a></li>
                 <li id="profile" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/profile' ?>">Profile</a></li>

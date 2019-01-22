@@ -14,6 +14,7 @@ class FrontController {
         $allowedPages=array(
             'home',
             'projects',
+            'jqWidgets',
             'developers',
             'groups',
             'profile'
