@@ -143,5 +143,64 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 
 .flexslider, .flexslider .slides > li, .flexslider2, .flexslider2 .slides > li, .slider-height {
-  height: 350px !important;
+  height: 250px !important;
+  border: 1;
+}
+
+.slides-text {
+  padding-top: 55px !important;
+}
+
+.responsive-square {
+  float:left;
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* = width for a 1:1 aspect ratio */
+  overflow:hidden;
+  
+}
+
+.responsive-square-content {
+  position:absolute;
+  height:90%; /* = 100% - 2*10% padding */
+  width:100%; /* = 100% - 2*5% padding */
+  padding: 5%;
+}
+
+.responsive-square-content:hover {
+  position:absolute;
+  height:90%; /* = 100% - 2*10% padding */
+  width:100%; /* = 100% - 2*5% padding */
+  padding: 5%;
+  opacity: 50%;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+.probootstrap-footer.probootstrap-bg {
+  padding: 1em !important;
+}
+
+body {
+  background-color: #111; 
+}
+
+.probootstrap-loader {
+  background: #000 url(../img/loader.gif) center no-repeat !important;
+}
+
+.probootstrap-slider.flexslider{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.probootstrap-animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }

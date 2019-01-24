@@ -1,11 +1,10 @@
-<div class="probootstrap-loader"></div>
-<section class="probootstrap-slider flexslider">
+<section class="probootstrap-slider flexslider border-bottom">
   <ul class="slides">
     <li class="py-2" style="background-image: url(<? echo _PROJECT_URL_ ?>/view/img/slider_3.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <div class="slides-text probootstrap-animate">
+            <div class="slides-text">
               <h4>Join other developers.</h4>
               <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary btn-sm">Join now!</a></p>
             </div>
@@ -17,7 +16,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <div class="slides-text probootstrap-animate">
+            <div class="slides-text">
               <h3>Help build something big.</h3>
               <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
@@ -29,7 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <div class="slides-text probootstrap-animate">
+            <div class="slides-text">
               <h3>Learn and share knowledge.</h3>
               <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
@@ -41,7 +40,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <div class="slides-text probootstrap-animate">
+            <div class="slides-text">
               <h3>Improve the world with your contributions.</h3>
               <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
@@ -53,7 +52,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <div class="slides-text probootstrap-animate">
+            <div class="slides-text">
               <h3>Start your own project and get helped by the community.</h3>
               <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Join now!</a></p>
             </div>
@@ -72,7 +71,7 @@
         <h2>The Projects</h2>
       </div>
     </div>
-    <div class="row" id="allHomeProjects"></div>
+    <div class="row probootstrap-animate" id="allHomeProjects"></div>
   </div>
 </section>
 

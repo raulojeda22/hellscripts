@@ -14,7 +14,9 @@
                 <li id="developers" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/developers' ?>">Developers</a></li>
                 <li id="groups" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/groups' ?>">Groups</a></li>
                 <li id="profile" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/profile' ?>">Profile</a></li>
+                <li id="contact" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/contact' ?>">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
+<div class="probootstrap-loader"></div>

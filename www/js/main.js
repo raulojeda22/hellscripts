@@ -362,7 +362,7 @@
 		if(pathname=='hellscripts'||pathname==""){
 			$('#home').addClass('active');
 		}
-	  }
+	}
 
 	
 	/*----------------------------------------

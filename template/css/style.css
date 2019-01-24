@@ -2641,7 +2641,7 @@ figure:hover figcaption, figure:focus figcaption {
   width: 100vw;
   height: 100vh;
   z-index: 9999;
-  background: #ffffff url(../img/preloader.gif) center no-repeat;
+  background: #000 url(../img/preloader.gif) center no-repeat;
 }
 
 .gototop {

@@ -17,7 +17,8 @@ class FrontController {
             'jqWidgets',
             'developers',
             'groups',
-            'profile'
+            'profile',
+            'contact'
         );
         return $allowedPages;
     }

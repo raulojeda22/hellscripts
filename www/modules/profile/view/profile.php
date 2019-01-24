@@ -1,3 +1,18 @@
+<section class="probootstrap-slider flexslider">
+    <ul class="slides">
+        <li style="background-image: url(<? echo _PROJECT_URL_ ?>/view/img/slider_3.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="slides-text probootstrap-animate">
+                            <h2>Profile</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
 <section class="page-title">
     <div class="container">
         <!-- <div class="row">
