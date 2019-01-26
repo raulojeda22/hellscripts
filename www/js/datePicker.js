@@ -1,6 +1,6 @@
 function loadDatePicker(){
     $('.datePicker').datepicker({
-        dateFormat: 'dd/mm/yy', 
+        dateFormat: 'yy-mm-dd', 
         changeMonth: false, 
         changeYear: false, 
         yearRange: '0:+2',

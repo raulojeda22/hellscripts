@@ -82,22 +82,37 @@ $(document).ready(function() {
             }
         });
         $("#projectFormButton").click(function(){  //POST PROJECT
+            $('.projectError').empty();
             var object = {};
+            var emptyValue = false;
+            var errorsList = [];
             $('.projectFormElement').map(function(){
                 var name = $(this).attr('name');
-                object = Object.assign({[name]: $(this).val()},object);
-            });
-            $.ajax({
-                url: 'www/modules/projects/model/projects.php',
-                type: 'POST',
-                data: {data: JSON.stringify(object)},
-                success: function(data){
-                    console.log(data);
-                },
-                error: function(){
-                    console.log(data);
+                var value = $(this).val();
+                if (value==""){
+                    emptyValue=true;
+                    errorsList.push(name);
                 }
+                object = Object.assign({[name]: value},object);
             });
+            if (!emptyValue){
+                $.ajax({
+                    url: 'www/modules/projects/model/projects.php',
+                    type: 'POST',
+                    data: {data: JSON.stringify(object)},
+                    success: function(data){
+                        console.log(data);
+                    },
+                    error: function(){
+                        console.log(data);
+                    }
+                });
+            } else {
+                $('.projectError').html('Please check the ');
+                errorsList.forEach(function(value,index){
+                    $('.projectError').append(value+' ');
+                });
+            }
         });
     });   
     $("#deleteAllProjects").click(function(){  //SHOW PROJECT FORM

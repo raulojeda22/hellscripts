@@ -1,4 +1,5 @@
 <div class="container">
+    <div class="projectError"></div>
     <form action="#" method="post" class="probootstrap-form mb60">
         <div class="form-group">
             <label for="fname">Name*</label>
@@ -14,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="image">Image url</label>
-            <input type="image" class="form-control projectFormElement" id="image" name="image">
+            <input type="url" class="form-control projectFormElement" id="image" name="image">
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -46,7 +47,7 @@
         </div>
         <div class="form-group"> <!-- Date input -->
             <label class="control-label" for="date">Expected end date</label>
-            <input class="form-control datePicker projectFormElement" id="date" name="endDate" placeholder="DD/MM/YYY" type="text"/>
+            <input class="form-control datePicker projectFormElement" id="date" name="endDate" placeholder="YYYY-MM-DD" type="text"/>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-primary" id="projectFormButton" name="submit">Create</button>
