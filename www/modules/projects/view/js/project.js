@@ -108,12 +108,24 @@ $(document).ready(function() {
                     }
                 });
             } else {
-                $('.projectError').html('Please check the ');
+                $('.projectError').html('<h4 class="errorText text-default" >Please check the </h4>');
                 errorsList.forEach(function(value,index){
-                    $('.projectError').append(value+' ');
+                    if (index === errorsList.length - 2){
+                        $('.errorText').append(value+' and ');
+                    } else if (index === errorsList.length - 1){
+                        $('.errorText').append(value+'.');
+                    } else {
+                        $('.errorText').append(value+', ');
+                    }
                 });
+                $('html, body').animate({
+                    scrollTop: $('html').offset().top
+                }, 500, 'easeInOutExpo');
             }
-        });
+        });			
+
+			
+			
     });   
     $("#deleteAllProjects").click(function(){  //SHOW PROJECT FORM
         $.ajax({
