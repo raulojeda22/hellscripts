@@ -64,6 +64,6 @@
   
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=<? echo _GOOGLE_API_KEY_; ?>"></script>
-  <script src="<? echo _PROJECT_URL_ ?>/js/google-map.js"></script>
+  <script src="<? echo _PROJECT_URL_ ?>/view/js/google-map.js"></script>
   </body>
 </html>
