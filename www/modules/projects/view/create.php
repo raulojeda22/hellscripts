@@ -17,30 +17,31 @@
             <label for="image">Image url*</label>
             <input type="url" class="form-control projectFormElement" id="image" name="image" placeholder="https://screenshotlayer.com/images/assets/placeholder.png">
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <label>License</label>
-                <select class="form-control projectFormElement" name="license" id="license">
-                    <option value="Apache">Apache License 2.0</option>
-                    <option value="GNU">GNU General Public License</option>
-                    <option value="MIT">MIT license</option>
-                    <option value="CDDL">Common Development and Distribution License</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label>Privacy</label>
-                <div class="toggle_radio">
-                    <input type="radio" checked class="toggle_option" id="first_toggle" name="privacy" value="public">
-                    <input type="radio" class="toggle_option" id="second_toggle" name="privacy" value="protected">
-                    <input type="radio" class="toggle_option" id="third_toggle" name="privacy" value="private">
-                    <label for="first_toggle"><p>Public</p></label>
-                    <label for="second_toggle"><p>Protected</p></label>
-                    <label for="third_toggle"><p>Private</p></label>
-                    <span hidden id="checkBoxValue" class="projectFormElement" name="privacy" value="public"></span> 
+        
+        <div class="form-group">
+            <label>License</label>
+            <select class="form-control projectFormElement" name="license" id="license">
+                <option value="Apache">Apache License 2.0</option>
+                <option value="GNU">GNU General Public License</option>
+                <option value="MIT">MIT license</option>
+                <option value="CDDL">Common Development and Distribution License</option>
+            </select>
+        </div>
+            
+        <div class="form-group">
+            <label>Privacy</label>
+            <div class="toggle_radio">
+                <input type="radio" checked class="toggle_option" id="first_toggle" name="privacy" value="public">
+                <input type="radio" class="toggle_option" id="second_toggle" name="privacy" value="protected">
+                <input type="radio" class="toggle_option" id="third_toggle" name="privacy" value="private">
+                <label for="first_toggle"><p>Public</p></label>
+                <label for="second_toggle"><p>Protected</p></label>
+                <label for="third_toggle"><p>Private</p></label>
+                <span hidden id="checkBoxValue" class="projectFormElement" name="privacy" value="public"></span> 
                 <div class="toggle_option_slider"></div>
-                </div>
             </div>
         </div>
+            
         <div class="form-group">
             <label>Programming languages: *</label> <h4 class="text-muted">(Separate them in commas)</h4>
             <textarea cols="30" rows="10" class="form-control projectFormElement" placeholder="PHP, Javascript, CSS, HTML" id="message" name="languages"></textarea>

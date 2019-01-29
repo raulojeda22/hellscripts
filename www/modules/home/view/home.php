@@ -67,6 +67,32 @@
 <section class="probootstrap-section">
   <div class="container">
     <div class="row">
+      <div class="col-md-12 probootstrap-animate">
+        <form class="probootstrap-form">
+          <div class="input-group  float-right">
+            <div class="input-group-btn">
+              <select class="form-control" name="license" id="licenseSearch">
+                <option value="Apache">Apache License 2.0</option>
+                <option value="GNU">GNU General Public License</option>
+                <option value="MIT">MIT license</option>
+                <option value="CDDL">Common Development and Distribution License</option>
+              </select>
+            </div>
+            <div class="input-group-btn">
+              <select class="form-control" name="license" id="asdfSearch">
+                <option value="Apache">Apache License 2.0</option>
+                <option value="GNU">GNU General Public License</option>
+                <option value="MIT">MIT license</option>
+                <option value="CDDL">Common Development and Distribution License</option>
+              </select>
+            </div>
+            <div class="input-group-btn form-field">
+              <input type="text" class="form-control" placeholder="Search term...">
+              <button class="btn btn-primary" type="button"><img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class="col-md-12 section-heading probootstrap-animate">
         <h2>The Projects</h2>
       </div>
