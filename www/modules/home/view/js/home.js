@@ -1,8 +1,57 @@
 $(document).ready(function() {
+    var license = '!!';
+    var languages = '!!';
+    var name = '!!';
+    var results = '';
+    function anySearchChange(license,languages,name){
+        if (typeof license == undefined || license == 0){
+            license='!!';
+            $('#licenseSearch').html('<option value="0">Select the license...</option>');
+        }    
+        if (typeof languages == undefined || languages == 0){
+            languages='!!';
+            $('#languagesSearch').html('<option value="0">Select the programming languages...</option>');
+        }   
+        if (name=='!Search term...!' || name==''){
+            name='!!';
+        }
+        console.log(license,languages,name);
+        $.ajax({
+            url: "www/modules/projects/model/projects.php?license="+license+"&languages="+languages+"&name="+name,                                         type: 'GET',
+            success: function (data) {
+                data=JSON.parse(data);
+                results=data;
+                licenseShown=[];
+                languagesShown=[];
+                namesShown=[];
+                $('#suggestionsLicense').empty();
+                $('#suggestionsLanguages').empty();
+                $('#suggestionsName').empty();                
+                data.forEach(element => {
+                    if (licenseShown.indexOf(element.license) == -1){
+                        licenseShown.push(element.license);
+                        $('#suggestionsLicense').append('<option value="'+element.license+'">')
+                    }
+                    if (languagesShown.indexOf(element.languages) == -1){
+                        languagesShown.push(element.languages);
+                        $('#suggestionsLanguages').append('<option>'+element.languages+'</option>')
+                    }
+                    if (namesShown.indexOf(element.name) == -1){
+                        namesShown.push(element.name);
+                        $('#suggestionsName').append('<option>'+element.name+'</option>')
+                    }
+                });
+            },
+            error: function(data){
+                console.log(data);
+            }
+        });
+    }
     $.ajax({
         url: "www/modules/projects/model/projects.php",  //LOAD PROJECTS
         type: 'GET',
         success: function (data) {
+            anySearchChange(license,languages,name);
             data=JSON.parse(data);
             data.forEach(element => {
                 $.ajax({
@@ -18,6 +67,30 @@ $(document).ready(function() {
                     }
                 });
             });
+            
+            $('#licenseSearch').change(function(){
+                license=$(this).val();
+                languages=$('#languagesSearch').val();
+                name='!'+$('#nameSearch').val()+'!';
+                anySearchChange(license,languages,name);
+            });
+            $('#languagesSearch').change(function(){
+                license=$('#licenseSearch').val();
+                languages=$(this).val();
+                name='!'+$('#nameSearch').val()+'!';
+                anySearchChange(license,languages,name);
+            });
+            $('#nameSearch').change(function(){
+                license=$('#licenseSearch').val();
+                languages=$('#languagesSearch').val();
+                name='!'+$(this).val()+'!';
+                anySearchChange(license,languages,name);
+            });
+
+            $('#projectSearch').click(function(){
+                console.log(results);
+            });
+
             $(".projectGet").click(function(){  //GET PROJECTS
                 var parent=$(this).parent();
                 var projectId=parent.attr('id').replace('project','');

@@ -70,26 +70,21 @@
       <div class="col-md-12 probootstrap-animate">
         <form class="probootstrap-form">
           <div class="input-group  float-right">
-            <div class="input-group-btn">
-              <select class="form-control" name="license" id="licenseSearch">
-                <option value="Apache">Apache License 2.0</option>
-                <option value="GNU">GNU General Public License</option>
-                <option value="MIT">MIT license</option>
-                <option value="CDDL">Common Development and Distribution License</option>
-              </select>
+            <div class="input-group-btn form-field">              
+              <input list="suggestionsLicense" type="text" class="form-control typeahead border-primary" name="licenseSearch" id="licenseSearch" placeholder="Search the license..." autocomplete="off">
+              <datalist id="suggestionsLicense"></datalist>
             </div>
-            <div class="input-group-btn">
-              <select class="form-control" name="license" id="asdfSearch">
-                <option value="Apache">Apache License 2.0</option>
-                <option value="GNU">GNU General Public License</option>
-                <option value="MIT">MIT license</option>
-                <option value="CDDL">Common Development and Distribution License</option>
-              </select>
+            <div class="input-group-btn form-field">              
+              <input list="suggestionsLanguages" type="text" class="form-control typeahead border-primary" name="languagesSearch" id="languagesSearch" placeholder="Search the languages..." autocomplete="off">
+              <datalist id="suggestionsLanguages"></datalist>
             </div>
-            <div class="input-group-btn form-field">
-              <input type="text" class="form-control" placeholder="Search term...">
-              <button class="btn btn-primary" type="button"><img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
+            <div class="input-group-btn form-field">              
+              <input list="suggestionsName" type="text" class="form-control typeahead border-primary" name="nameSearch" id="nameSearch" placeholder="Search by name..." autocomplete="off">
+              <datalist id="suggestionsName"></datalist>
             </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary" id="projectSearch" type="button">Search <img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
           </div>
         </form>
       </div>

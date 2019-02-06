@@ -3,14 +3,17 @@ include_once _PROJECT_PATH_.'/backend/models/Connection.class.php';
 class ControllerCore{
 
     private function addWhereStatement($array){
-        $query = "";
-        $conditions=0;
+        $conditions=count($array);
+        $query='';
+        if ($conditions>=1){
+            $query = " WHERE ";
+        }
         foreach ($array as $row => $value){
-            $query .= ' WHERE '.$row.'='.$value;
+            $query .= $row." LIKE '".str_replace('!','%',$value)."'";
+            $conditions--;
             if ($conditions>0){
-                $query .= ' AND';
+                $query .= ' AND ';
             }
-            $conditions++;
         }
         return $query;
     }
@@ -19,7 +22,6 @@ class ControllerCore{
         $connection = Connection::connect();
         $response = mysqli_query($connection, $query);
         Connection::close($connection);
-        error_log(print_r($response,1));
         return $response;
     }
 
@@ -28,6 +30,7 @@ class ControllerCore{
         if ($data!="" && is_array($data)){
             $query .= $this->addWhereStatement($data);
         }
+        error_log($query);
         return $query;
     }
     protected function buildPostQuery($data){

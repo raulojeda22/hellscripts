@@ -12,7 +12,6 @@ if ($method=='GET'||$method=='DELETE'){
     }
 } else {
     $data=json_decode($_POST['data']);
-    error_log(print_r($data,1));
     $results = $project->$method($data);
 }
 

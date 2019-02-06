@@ -18,7 +18,6 @@ if ($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['HTTP_HOST']=='127.0.0.1'){
     define('_PROJECT_PATH_',dirname(__FILE__).'/../..'); 
 }
 define('_GOOGLE_API_KEY_',file_get_contents(_PROJECT_PATH_.'/google_api_key.txt'));
-error_log(print_r(_GOOGLE_API_KEY_,1));
 exec('ls');
 
 ?>
