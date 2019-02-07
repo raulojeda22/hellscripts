@@ -4,15 +4,13 @@ $(document).ready(function() {
     var name = '!!';
     var results = '';
     function anySearchChange(license,languages,name){
-        if (typeof license == undefined || license == 0){
+        if (typeof license == undefined || license == ''){
             license='!!';
-            $('#licenseSearch').html('<option value="0">Select the license...</option>');
         }    
-        if (typeof languages == undefined || languages == 0){
+        if (typeof languages == undefined || languages == ''){
             languages='!!';
-            $('#languagesSearch').html('<option value="0">Select the programming languages...</option>');
         }   
-        if (name=='!Search term...!' || name==''){
+        if (typeof names == undefined || name==''){
             name='!!';
         }
         console.log(license,languages,name);
@@ -88,7 +86,27 @@ $(document).ready(function() {
             });
 
             $('#projectSearch').click(function(){
-                console.log(results);
+                if (typeof license == undefined || license == ''){
+                    license='!!';
+                }    
+                if (typeof languages == undefined || languages == ''){
+                    languages='!!';
+                }   
+                if (typeof names == undefined || name==''){
+                    name='!!';
+                }
+                $.ajax({
+                    url: "www/modules/explore/model/setSearchParams.php",
+                    type: "POST",
+                    data: { params: {license: license, languages: languages, name: name} },
+                    success: function(data){
+                        console.log(data);
+                        window.location.href = 'explore';
+                    },
+                    error: function(data){
+                        console.log(data);
+                    }
+                });
             });
 
             $(".projectGet").click(function(){  //GET PROJECTS

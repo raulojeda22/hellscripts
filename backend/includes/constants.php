@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
     $protocol = 'https://';
 } else {

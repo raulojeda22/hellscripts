@@ -9,6 +9,7 @@
         <nav role="navigation" class="probootstrap-nav hidden-xs">
             <ul class="probootstrap-main-nav">
                 <li id="home" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/home' ?>">Home</a></li>
+                <li id="explore" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/explore' ?>">Explore</a></li>
                 <li id="projects" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/projects' ?>">Projects</a></li>
                 <li id="jqWidgets" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/jqWidgets' ?>">JqWidgets</a></li>
                 <li id="developers" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/developers' ?>">Developers</a></li>

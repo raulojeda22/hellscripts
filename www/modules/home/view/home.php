@@ -83,10 +83,10 @@
               <datalist id="suggestionsName"></datalist>
             </div>
           </div>
-          <div class="text-center">
-            <button class="btn btn-primary" id="projectSearch" type="button">Search <img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
-          </div>
         </form>
+        <div class="text-center">
+          <button class="btn btn-primary" id="projectSearch" type="button">Search <img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
+        </div>
       </div>
       <div class="col-md-12 section-heading probootstrap-animate">
         <h2>The Projects</h2>
