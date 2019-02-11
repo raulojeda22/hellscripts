@@ -7,7 +7,7 @@ if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
 }
 
 
-if ($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['HTTP_HOST']=='127.0.0.1'){
+if ($_SERVER['HTTP_HOST']=='localhost'||$_SERVER['HTTP_HOST']=='127.0.0.1'||$_SERVER['HTTP_HOST']=='192.168.22.120'){
     define('_PUBLIC_URL_',$protocol.$_SERVER['HTTP_HOST'].'/hellscripts');
     define('_PROJECT_URL_',$protocol.$_SERVER['HTTP_HOST'].'/hellscripts/www');   
     define('_PROJECT_PATH_',dirname(__FILE__).'/../..'); 

@@ -150,31 +150,28 @@ div.dataTables_wrapper div.dataTables_length select {
   padding-top: 55px !important;
 }
 
-.responsive-square {
-  float:left;
-  position: relative;
-  width: 100%;
-  padding-bottom: 75%; /* = width for a 1:1 aspect ratio */
-  overflow:hidden;
-  
+.alignColumn {
+  float: none; 
+  display: inline-block; 
+  margin: 0 -0.125em; 
+  vertical-align: top;
 }
 
-.responsive-square-content {
-  position:absolute;
-  height:90%; /* = 100% - 2*10% padding */
-  width:100%; /* = 100% - 2*5% padding */
-  padding: 5%;
+.max-line {
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  line-height: 1.8em;
 }
 
-.responsive-square-content:hover {
-  position:absolute;
-  height:90%; /* = 100% - 2*10% padding */
-  width:100%; /* = 100% - 2*5% padding */
-  padding: 5%;
-  opacity: 50%;
+.text-white {
+  color: white;
 }
 
-
+.text-white:hover {
+  color: #ae0014;
+}
 
 .probootstrap-footer.probootstrap-bg {
   padding: 1em !important;
@@ -280,7 +277,3 @@ body {
   }
 }
 
-
-.col {
-  border: solid;
-}
