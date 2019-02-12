@@ -63,39 +63,39 @@
   </ul>
 </section>
 <!-- END: slider  -->
-
-<section class="probootstrap-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 probootstrap-animate">
-        <form class="probootstrap-form">
-          <div class="input-group  float-right">
-            <div class="input-group-btn form-field">              
-              <input list="suggestionsLicense" type="text" class="form-control typeahead border-primary" name="licenseSearch" id="licenseSearch" placeholder="Search the license..." autocomplete="off">
-              <datalist id="suggestionsLicense"></datalist>
+<div id="homePageContent">
+  <section class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 probootstrap-animate">
+          <form class="probootstrap-form">
+            <div class="input-group  float-right">
+              <div class="input-group-btn form-field">              
+                <input list="suggestionsLicense" type="text" class="form-control typeahead border-primary" name="licenseSearch" id="licenseSearch" placeholder="Search the license..." autocomplete="off">
+                <datalist id="suggestionsLicense"></datalist>
+              </div>
+              <div class="input-group-btn form-field">              
+                <input list="suggestionsLanguages" type="text" class="form-control typeahead border-primary" name="languagesSearch" id="languagesSearch" placeholder="Search the languages..." autocomplete="off">
+                <datalist id="suggestionsLanguages"></datalist>
+              </div>
+              <div class="input-group-btn form-field">              
+                <input list="suggestionsName" type="text" class="form-control typeahead border-primary" name="nameSearch" id="nameSearch" placeholder="Search by name..." autocomplete="off">
+                <datalist id="suggestionsName"></datalist>
+              </div>
             </div>
-            <div class="input-group-btn form-field">              
-              <input list="suggestionsLanguages" type="text" class="form-control typeahead border-primary" name="languagesSearch" id="languagesSearch" placeholder="Search the languages..." autocomplete="off">
-              <datalist id="suggestionsLanguages"></datalist>
-            </div>
-            <div class="input-group-btn form-field">              
-              <input list="suggestionsName" type="text" class="form-control typeahead border-primary" name="nameSearch" id="nameSearch" placeholder="Search by name..." autocomplete="off">
-              <datalist id="suggestionsName"></datalist>
-            </div>
+          </form>
+          <div class="text-center">
+            <button class="btn btn-primary" id="projectSearch" type="button">Search <img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
           </div>
-        </form>
-        <div class="text-center">
-          <button class="btn btn-primary" id="projectSearch" type="button">Search <img src="<? echo _PROJECT_URL_ ?>/view/img/search.png" /></button>
+        </div>
+        <div class="col-md-12 section-heading probootstrap-animate">
+          <h2>The Projects</h2>
         </div>
       </div>
-      <div class="col-md-12 section-heading probootstrap-animate">
-        <h2>The Projects</h2>
-      </div>
+      <div class="row probootstrap-animate" id="allHomeProjects"></div>
     </div>
-    <div class="row probootstrap-animate" id="allHomeProjects"></div>
-  </div>
-</section>
-
+  </section>
+</div>
 <script src="<? echo _PROJECT_URL_ ?>/modules/home/view/js/home.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
 <?
 include_once (_PROJECT_PATH_.'/www/modules/projects/view/modal.php');

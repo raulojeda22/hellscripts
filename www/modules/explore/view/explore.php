@@ -13,6 +13,7 @@
         </li>
     </ul>
 </section>
+<div id="explorePageContent">
 <section class="probootstrap-section">
     <div class="container">
         <div class="col-md-12 section-heading probootstrap-animate">
@@ -35,6 +36,7 @@
         </div>
     </div>
 </section>
+</div>
 <!-- END section -->
 
 <script src="<? echo _PROJECT_URL_ ?>/modules/explore/view/js/explore.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>

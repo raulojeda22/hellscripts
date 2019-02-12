@@ -3,6 +3,29 @@ $(document).ready(function() {
     var languages = '!!';
     var name = '!!';
     var results = '';
+    function setSearchParams(){
+        if (typeof license == undefined || license == ''){
+            license='!!';
+        }    
+        if (typeof languages == undefined || languages == ''){
+            languages='!!';
+        }   
+        if (typeof names == undefined || name==''){
+            name='!!';
+        }
+        $.ajax({
+            url: "www/modules/explore/model/setSearchParams.php",
+            type: "POST",
+            data: { params: {license: license, languages: languages, name: name} },
+            success: function(data){
+                console.log(data);
+                window.location.href = 'explore';
+            },
+            error: function(data){
+                console.log(data);
+            }
+        });
+    }
     function anySearchChange(license,languages,name){
         if (typeof license == undefined || license == ''){
             license='!!';
@@ -45,6 +68,21 @@ $(document).ready(function() {
             }
         });
     }
+    $(document).keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            if ($("#licenseSearch").is(":focus")) {
+                $("#licenseSearch").blur();
+            }
+            if ($("#languagesSearch").is(":focus")) {
+                $("#languagesSearch").blur();
+            }
+            if ($("#nameSearch").is(":focus")) {
+                $("#nameSearch").blur();
+            }
+            setSearchParams();	
+        }
+    });
     $.ajax({
         url: "www/modules/projects/model/projects.php",  //LOAD PROJECTS
         type: 'GET',
@@ -86,27 +124,7 @@ $(document).ready(function() {
             });
 
             $('#projectSearch').click(function(){
-                if (typeof license == undefined || license == ''){
-                    license='!!';
-                }    
-                if (typeof languages == undefined || languages == ''){
-                    languages='!!';
-                }   
-                if (typeof names == undefined || name==''){
-                    name='!!';
-                }
-                $.ajax({
-                    url: "www/modules/explore/model/setSearchParams.php",
-                    type: "POST",
-                    data: { params: {license: license, languages: languages, name: name} },
-                    success: function(data){
-                        console.log(data);
-                        window.location.href = 'explore';
-                    },
-                    error: function(data){
-                        console.log(data);
-                    }
-                });
+                setSearchParams();
             });
 
             $(".projectGet").click(function(){  //GET PROJECTS
@@ -119,6 +137,16 @@ $(document).ready(function() {
                     type: method,
                     success: function (data){
                         data=JSON.parse(data)[0];
+                        $.ajax({
+                            url: "www/modules/projects/view/projectPage.php",
+                            type: 'POST',
+                            data: { data: data},
+                            success: function (data){
+                                $('#homePageContent').html(data);
+                            }
+                        });
+
+                        /*
                         if (method=='GET'){
                             $.each(data, function(key,value){
                                 $('#'+key+'ProjectModal').html(value);
@@ -145,7 +173,7 @@ $(document).ready(function() {
                             });
                         } else if(method=='DELETE'){
                             parent.remove();
-                        }
+                        }*/
                     },
                     error: function (data){
                         console.log(data);

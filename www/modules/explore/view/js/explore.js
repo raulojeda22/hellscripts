@@ -25,6 +25,15 @@ $(document).ready(function() {
                                         type: method,
                                         success: function (data){
                                             data=JSON.parse(data)[0];
+                                            $.ajax({
+                                                url: "www/modules/projects/view/projectPage.php",
+                                                type: 'POST',
+                                                data: { data: data},
+                                                success: function (data){
+                                                    $('#explorePageContent').html(data);
+                                                }
+                                            });
+                                            /*
                                             if (method=='GET'){
                                                 $.each(data, function(key,value){
                                                     $('#'+key+'ProjectModal').html(value);
@@ -52,6 +61,7 @@ $(document).ready(function() {
                                             } else if(method=='DELETE'){
                                                 parent.remove();
                                             }
+                                            */
                                         },
                                         error: function (data){
                                             console.log(data);
