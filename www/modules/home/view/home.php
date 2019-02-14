@@ -95,6 +95,17 @@
       <div class="row probootstrap-animate" id="allHomeProjects"></div>
     </div>
   </section>
+  <section class="probootstrap-section">
+    <div class="container">
+        <div class="col-md-12 section-heading probootstrap-animate">
+            <h2>Github Projects</h2>
+        </div>
+        <div class="row row-eq-height probootstrap-animate" id="githubHomeProjects">
+            
+
+        </div>
+    </div>
+</section>
 </div>
 <script src="<? echo _PROJECT_URL_ ?>/modules/home/view/js/home.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
 <?

@@ -60,7 +60,7 @@
                 </table>
             </div>
         </div>
-        <script src="<? echo _PROJECT_URL_ ?>/modules/projects/view/js/project.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
+        <script src="<? echo _PROJECT_URL_ ?>/modules/projects/view/js/projects.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
         <!-- END section -->
     </div>
 </section>

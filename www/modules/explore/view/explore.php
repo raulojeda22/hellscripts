@@ -28,9 +28,9 @@
 <section class="probootstrap-section">
     <div class="container">
         <div class="col-md-12 section-heading probootstrap-animate">
-            <h2>Github</h2>
+            <h2>Github Projects</h2>
         </div>
-        <div class="row row-eq-height probootstrap-animate" id="githubProjects">
+        <div class="row row-eq-height probootstrap-animate" id="githubExploreProjects">
             
 
         </div>

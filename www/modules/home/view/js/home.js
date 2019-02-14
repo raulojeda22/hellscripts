@@ -126,6 +126,7 @@ $(document).ready(function() {
             $('#projectSearch').click(function(){
                 setSearchParams();
             });
+//
 
             $(".projectGet").click(function(){  //GET PROJECTS
                 var parent=$(this).parent();
@@ -137,6 +138,9 @@ $(document).ready(function() {
                     type: method,
                     success: function (data){
                         data=JSON.parse(data)[0];
+                        $('html, body').animate({
+                            scrollTop: $('html').offset().top
+                        }, 500, 'easeInOutExpo');
                         $.ajax({
                             url: "www/modules/projects/view/projectPage.php",
                             type: 'POST',
@@ -182,6 +186,74 @@ $(document).ready(function() {
             })
         },
         error: function (data) {
+            console.log(data);
+        }
+    });
+    $.ajax({
+        url: 'https://api.github.com/search/repositories?q='+Math.random().toString(36).substr(2, 2)+'&sort=stars&order=desc',
+        type: 'GET',
+        success: function(data){
+            data.items.forEach(function(element){
+                var object = {};
+                object = Object.assign({image: element.owner.avatar_url},object);
+                object = Object.assign({id: element.id},object);
+                object = Object.assign({name: element.full_name},object);
+                object = Object.assign({languages: element.language},object);
+                object = Object.assign({url: element.svn_url},object);
+                $.ajax({
+                    url: "www/modules/projects/view/projectGithubDiv.php", //SHOW PROJECTS
+                    type: 'POST',
+                    async: false,
+                    data: { data: object},
+                    success: function(data) {
+                        $('#githubHomeProjects').append(data);
+                    },
+                    error: function(data){
+                        console.log(data);
+                    }
+                });
+            });
+            $(".githubGet").click(function(){  //GET PROJECTS
+                var parent=$(this).parent();
+                var projectId=parent.attr('name');
+                var method=$(this).attr('name');
+                object = {id: projectId}
+                $.ajax({
+                    url: "https://api.github.com/repos/"+projectId,
+                    type: method,
+                    success: function (data){
+                        console.log(data);
+                        var object = {};
+                        object = Object.assign({image: data.owner.avatar_url},object);
+                        object = Object.assign({description: data.description},object);
+                        object = Object.assign({name: data.full_name},object);
+                        object = Object.assign({languages: data.language},object);
+                        object = Object.assign({website: data.svn_url},object);
+                        object = Object.assign({privacy: 'public'},object);
+                        if (data.license != null){
+                            object = Object.assign({license: data.license.spdx_id},object);
+                        } else {
+                            object = Object.assign({license: 'Not specified'},object);
+                        }
+                        $('html, body').animate({
+                            scrollTop: $('html').offset().top
+                        }, 500, 'easeInOutExpo');
+                        $.ajax({
+                            url: "www/modules/projects/view/projectGithubPage.php",
+                            type: 'POST',
+                            data: { data: object},
+                            success: function (data){
+                                $('#homePageContent').html(data);
+                            }
+                        });
+                    },
+                    error: function (data){
+                        console.log(data);
+                    }
+                });
+            })
+        },
+        error: function(data){
             console.log(data);
         }
     });

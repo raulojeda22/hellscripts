@@ -25,6 +25,9 @@ $(document).ready(function() {
                                         type: method,
                                         success: function (data){
                                             data=JSON.parse(data)[0];
+                                            $('html, body').animate({
+                                                scrollTop: $('html').offset().top
+                                            }, 500, 'easeInOutExpo');
                                             $.ajax({
                                                 url: "www/modules/projects/view/projectPage.php",
                                                 type: 'POST',
@@ -87,18 +90,6 @@ $(document).ready(function() {
                 success: function(data){
                     console.log(data);
                     data.items.forEach(function(element){
-                        /*
-                        element.description;
-                        element.homepage;
-                        element.language;
-                        element.license.spdx_id;
-                        element.name;
-                        element.owner.login;
-                        element.score;
-                        element.full_name;
-                        element.contents_url;
-                        element.owner.avatar_url;
-                        */
                         var object = {};
                         object = Object.assign({image: element.owner.avatar_url},object);
                         object = Object.assign({id: element.id},object);
@@ -111,13 +102,52 @@ $(document).ready(function() {
                             async: false,
                             data: { data: object},
                             success: function(data) {
-                                $('#githubProjects').append(data);
+                                $('#githubExploreProjects').append(data);
                             },
                             error: function(data){
                                 console.log(data);
                             }
                         });
                     });
+                    $(".githubGet").click(function(){  //GET PROJECTS
+                        var parent=$(this).parent();
+                        var projectId=parent.attr('name');
+                        var method=$(this).attr('name');
+                        object = {id: projectId}
+                        $.ajax({
+                            url: "https://api.github.com/repos/"+projectId,
+                            type: method,
+                            success: function (data){
+                                console.log(data);
+                                var object = {};
+                                object = Object.assign({image: data.owner.avatar_url},object);
+                                object = Object.assign({description: data.description},object);
+                                object = Object.assign({name: data.full_name},object);
+                                object = Object.assign({languages: data.language},object);
+                                object = Object.assign({website: data.svn_url},object);
+                                object = Object.assign({privacy: 'public'},object);
+                                if (data.license != null){
+                                    object = Object.assign({license: data.license.spdx_id},object);
+                                } else {
+                                    object = Object.assign({license: 'Not specified'},object);
+                                }
+                                $('html, body').animate({
+                                    scrollTop: $('html').offset().top
+                                }, 500, 'easeInOutExpo');
+                                $.ajax({
+                                    url: "www/modules/projects/view/projectGithubPage.php",
+                                    type: 'POST',
+                                    data: { data: object},
+                                    success: function (data){
+                                        $('#explorePageContent').html(data);
+                                    }
+                                });
+                            },
+                            error: function (data){
+                                console.log(data);
+                            }
+                        });
+                    })
                 },
                 error: function (data){
                     console.log(data);

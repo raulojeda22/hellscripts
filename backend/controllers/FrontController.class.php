@@ -19,7 +19,8 @@ class FrontController {
             'groups',
             'profile',
             'contact',
-            'explore'
+            'explore',
+            'users'
         );
         return $allowedPages;
     }
