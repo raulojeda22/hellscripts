@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
             <label for="email">Website*</label>
-            <input type="email" class="form-control projectFormElement" id="email" name="website" placeholder="mail@hellscripts.com">
+            <input type="email" class="form-control projectFormElement" id="email" name="website" placeholder="https://hellscripts.com">
         </div>
         <div class="form-group">
             <label for="image">Image url*</label>

@@ -30,7 +30,6 @@ class ControllerCore{
         if ($data!="" && is_array($data)){
             $query .= $this->addWhereStatement($data);
         }
-        error_log($query);
         return $query;
     }
     protected function buildPostQuery($data){
@@ -38,15 +37,15 @@ class ControllerCore{
             $query = 'INSERT INTO '.$this->tableName;
             $rows = ' (';
             $values = ' VALUES (';
+            $endData=end($data);
+            $endKey = key($data);
+            unset($data->$endKey);
             foreach ($data as $row => $value){
-                if ($value === end($data)) {
-                    $rows .= $row.')';
-                    $values .= '"'.$value.'")';
-                } else {
-                    $rows .= $row.', ';
-                    $values .= '"'.$value.'", ';
-                }
+                $rows .= $row.', ';
+                $values .= '"'.$value.'", ';
             }
+            $values .= '"'.$endData.'")';
+            $rows .= $endKey.')';
             $query .= $rows.$values;
         }
         return $query;
@@ -67,5 +66,74 @@ class ControllerCore{
         $query = 'DELETE FROM '.$this->tableName;
         $query .= $this->addWhereStatement($data);
         return $query;
+    }
+
+    public static function retrieveUserByToken($token){
+        $authentication = 'SELECT secret FROM authentication';
+        $authentication .= self::addWhereStatement(array("token" => $token));
+        $authentication = self::runQuery($authentication)->fetch_object();
+        if (is_object($authentication)){
+            $user = 'SELECT * FROM users';
+            $user .= self::addWhereStatement(array("id" => $authentication->secret));
+            $user = self::runQuery($user)->fetch_object();
+            return $user;
+        }
+        return false;
+    }
+
+    public static function retrievePermissions($idAuthorization,$tableName){
+        $table = 'SELECT * FROM tables';
+        $table .= self::addWhereStatement(array("name" => $tableName));
+        $table = self::runQuery($table)->fetch_object();
+        if (is_object($table)){
+            if (property_exists($table,'id')){
+                $permission = 'SELECT * FROM permissions';
+                $permission .= self::addWhereStatement(array("idAuthorization" => $idAuthorization,"idTable" => $table->id));
+                $permission = self::runQuery($permission)->fetch_object();
+                return $permission;
+            }
+        }
+        return false;
+    }
+
+    public static function getAuthenticationByUserId($id){
+        $authentication = 'SELECT * FROM authentication';
+        $authentication .= self::addWhereStatement(array("secret" => $id));
+        $authentication = self::runQuery($authentication)->fetch_object();
+        return $authentication;
+    }
+
+    public static function retrieveTokenByEmailAndPassword($email,$password){
+        $user = 'SELECT * FROM users';
+        $user .= self::addWhereStatement(array("email" => $email));
+        $user = self::runQuery($user)->fetch_object();
+        $authentication = 'SELECT * FROM authentication';
+        $authentication .= self::addWhereStatement(array("secret" => $user->id));
+        $authentication = self::runQuery($authentication)->fetch_object();
+        if (password_verify($password,$authentication->password)){
+            return $authentication->token;
+        } else {
+            return false;
+        }
+    }
+    public function postNewUser($userParams,$authParams){
+        $user = 'SELECT * FROM users';
+        $user .= $this->addWhereStatement(array("email" => $userParams->email));
+        $user = $this->runQuery($user)->fetch_object();
+        if (!$user){
+            $userParams->idAuthorization=1;
+            $query=$this->buildPostQuery($userParams);
+            $user = $this->runQuery($query);
+            $user = 'SELECT * FROM users';
+            $user .= $this->addWhereStatement(array("email" => $userParams->email));
+            $user = $this->runQuery($user)->fetch_object();
+            if ($user){
+                $authentication = 'INSERT INTO authentication (password, token, secret) VALUES ("'.password_hash($authParams->password,PASSWORD_DEFAULT).'", "'.$authParams->token.'", "'.$user->id.'")';
+                $authentication = $this->runQuery($authentication);
+                return $authentication->token;
+            }
+        }
+        return false;
+        
     }
 }

@@ -4,6 +4,7 @@ $(document).ready(function(){
         var object = {};
         var emptyValue = false;
         var errorsList = [];
+        var email='';
         $('.loginFormElement').map(function(){
             var name = $(this).attr('name');
             var value = $(this).val();
@@ -11,23 +12,31 @@ $(document).ready(function(){
                 emptyValue=true;
                 errorsList.push(name);
             }
+            if (name=='email'){
+                email=value;
+            }
             object = Object.assign({[name]: value},object);
         });
         if (!emptyValue){
             console.log('POST login accepted');
-            /*
             $.ajax({
-                url: 'www/modules/projects/model/projects.php',
+                url: 'www/modules/users/model/users.php',
                 type: 'POST',
                 data: {data: JSON.stringify(object)},
                 success: function(data){
-                    console.log(data);
+                    Cookies.set('email', email);
+                    Cookies.set('token', data);
+                    window.location.href = 'home'
                 },
-                error: function(){
-                    console.log(data);
+                error: function(data){
+                    console.log(data)
+                    $('.loginError').html('<h4 class="errorText text-default" >Wrong email or password</h4>');
+                    $('html, body').animate({
+                        scrollTop: $('html').offset().top
+                    }, 500, 'easeInOutExpo');
                 }
             });
-            */
+            
         } else {
             console.log('POST login canceled');
             $('.loginError').html('<h4 class="errorText text-default" >Please check the </h4>');
@@ -47,7 +56,6 @@ $(document).ready(function(){
     });
     $('#registerSubmit').click(function(){
         $('.registerError').empty();
-        
         var object = {};
         var emptyValue = false;
         var errorsList = [];
@@ -58,22 +66,46 @@ $(document).ready(function(){
                 emptyValue=true;
                 errorsList.push(name);
             }
-            object = Object.assign({[name]: value},object);
+            if (name=='email'){
+                email=value;
+            }
+            if (name!='repeatPassword'){
+                object = Object.assign({[name]: value},object);
+            }
         });
+        if ($('#passwordRegister').val() != $('#repeatPasswordRegister').val()){
+            emptyValue=true;
+            errorsList.push('passwords are different')
+        };
         if (!emptyValue){
             console.log('POST register accepted');
-            /*
+            
+            var token='';
+            for (n=0;n<5;n++){
+                newToken = Math.random().toString(36).substring(2, 15);
+                token = token.concat(newToken);
+            }
             $.ajax({
-                url: 'www/modules/projects/model/projects.php',
+                url: 'www/modules/users/model/users.php',
                 type: 'POST',
                 data: {data: JSON.stringify(object)},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", token);
+                },
                 success: function(data){
                     console.log(data);
+                    Cookies.set('email', email);
+                    Cookies.set('token', data);
+                    window.location.href = 'home'
                 },
-                error: function(){
-                    console.log(data);
+                error: function(data){
+                    console.log(data)
+                    $('.registerError').html('<h4 class="errorText text-default" >Wrong input</h4>');
+                    $('html, body').animate({
+                        scrollTop: $('html').offset().top
+                    }, 500, 'easeInOutExpo');
                 }
-            });*/
+            });
         } else {
             console.log('POST register canceled');
             $('.registerError').html('<h4 class="errorText text-default" >Please check the </h4>');

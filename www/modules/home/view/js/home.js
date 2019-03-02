@@ -86,6 +86,9 @@ $(document).ready(function() {
     $.ajax({
         url: "www/modules/projects/model/projects.php",  //LOAD PROJECTS
         type: 'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", '188v6p5e8c1qa6p74m2jvmrlcahkavmxsgjmt9ho4917t772gmxpn2q');
+        },
         success: function (data) {
             anySearchChange(license,languages,name);
             data=JSON.parse(data);

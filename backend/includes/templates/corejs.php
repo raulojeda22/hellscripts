@@ -10,6 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script type="text/javascript" src="<? echo _PROJECT_URL_; ?>/view/js/jqwidgets/jqxcore.js"></script>
 <script type="text/javascript" src="<? echo _PROJECT_URL_; ?>/view/js/jqwidgets/jqxdata.js"></script> 
 <script type="text/javascript" src="<? echo _PROJECT_URL_; ?>/view/js/jqwidgets/jqxbuttons.js"></script>
