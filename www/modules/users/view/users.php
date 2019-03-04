@@ -21,7 +21,7 @@
           <div class="loginError"></div>
           <form class="probootstrap-form mb60">
             <div class="form-group">
-              <label for="email">Email or username</label>
+              <label for="email">Email</label>
               <input class="form-control loginFormElement" id="emailLogin" name="email">
             </div>
             <div class="form-group">

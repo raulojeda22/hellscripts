@@ -1,9 +1,9 @@
 <?
 class Authorization {
 
-    private $token;
-    private $user;
-    private $permissions;
+    public $token;
+    public $user;
+    public $permissions;
 
     public function __construct($token,$tableName){
         $this->token = $token;

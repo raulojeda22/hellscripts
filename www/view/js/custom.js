@@ -1,6 +1,30 @@
 jQuery(document).ready(function() {
+	var token = Cookies.get('token');
+	var email = Cookies.get('email');
+	var idUser = Cookies.get('idUser');
 	
-	"use strict";
-	// Your custom js code goes here.
+	if (token!=''){
+		$.ajax({
+			url: "www/modules/users/model/users.php?id="+idUser,
+			type: 'GET',
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader ("Authorization", token);
+			},
+			success: function (data) {
+				data = JSON.parse(data)[0];
+				$('#userButton').html('<button class="btn btn-primary btn-sm btn-link logout">Log out <i class="icon-user"></i></button>')
+				$('#userInfo').html('<h4>'+data.email+' <img src="https://api.adorable.io/avatars/40/'+data.email+'"/></h4>')
 
+				$('.logout').click(function (){
+					Cookies.remove('email');
+					Cookies.remove('token');
+					Cookies.remove('idUser');
+					window.location.href='home';
+				});
+			},
+			error: function (data){
+				console.log(data);
+			}
+		});
+	}
 });

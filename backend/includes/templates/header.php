@@ -18,7 +18,12 @@
                 <li id="contact" class="bannerItem"><a href="<? echo _PUBLIC_URL_.'/contact' ?>">Contact</a></li>
             </ul>
             <ul class="probootstrap-right-nav hidden-xs">
-                <li><a href="<? echo _PUBLIC_URL_.'/users' ?>">Log in <i class="icon-user"></i></a></li>
+                <li id="userButton"><a href="<? echo _PUBLIC_URL_.'/users' ?>" class="btn btn-sm btn-primary btn-link">Log in <i class="icon-user"></i></a></li>
+            </ul>
+        </nav>
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+            <ul class="probootstrap-right-nav hidden-xs">
+                <li id="userInfo"></li>
             </ul>
         </nav>
     </div>

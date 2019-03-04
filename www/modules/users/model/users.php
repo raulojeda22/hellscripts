@@ -3,7 +3,9 @@ include_once dirname(__FILE__).'/../../../../backend/includes/constants.php';
 include_once _PROJECT_PATH_.'/backend/models/User.class.php';
 $method = $_SERVER['REQUEST_METHOD'];
 $headers = apache_request_headers();
-$postParams=json_decode($_POST['data']);
+if ($method=='POST'){
+    $postParams=json_decode($_POST['data']);
+}
 if ($method=='POST' && property_exists($postParams,'password')
 && property_exists($postParams,'email') && !array_key_exists('Authorization',$headers)){
     $object = new User('');
@@ -23,5 +25,7 @@ if ($method=='POST' && property_exists($postParams,'password')
 } else {
     $object = new User($headers['Authorization']);
     include_once _PROJECT_PATH_.'/backend/controllers/ApiController.php';
+    error_log(print_r(json_encode($results),1));
     echo json_encode($results);
+    
 }

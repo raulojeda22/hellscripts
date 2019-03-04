@@ -2,6 +2,9 @@ $(document).ready(function() {
     $.ajax({
         url: "www/modules/projects/model/projects.php",  //LOAD PROJECTS
         type: 'GET',
+        beforeSend: function (xhr) {
+			xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+		},
         success: function (data) {
             data=JSON.parse(data);
             jqWidgetData=data[0];

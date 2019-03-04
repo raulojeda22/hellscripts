@@ -6,7 +6,7 @@
           <div class="col-md-12 text-center">
             <div class="slides-text">
               <h4>Join other developers.</h4>
-              <p><a href="<? echo _PUBLIC_URL_.'/users' ?>" target="_blank" class="btn btn-primary btn-sm">Join now!</a></p>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary btn-sm">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -18,7 +18,7 @@
           <div class="col-md-12 text-center">
             <div class="slides-text">
               <h3>Help build something big.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/users' ?>" target="_blank" class="btn btn-primary">Join now!</a></p>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
           <div class="col-md-12 text-center">
             <div class="slides-text">
               <h3>Learn and share knowledge.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/users' ?>" target="_blank" class="btn btn-primary">Join now!</a></p>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
           <div class="col-md-12 text-center">
             <div class="slides-text">
               <h3>Improve the world with your contributions.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/users' ?>" target="_blank" class="btn btn-primary">Join now!</a></p>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
           <div class="col-md-12 text-center">
             <div class="slides-text">
               <h3>Start your own project and get helped by the community.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/users' ?>" target="_blank" class="btn btn-primary">Join now!</a></p>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
             </div>
           </div>
         </div>

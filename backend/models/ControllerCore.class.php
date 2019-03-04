@@ -103,6 +103,16 @@ class ControllerCore{
         return $authentication;
     }
 
+    public static function getAuthenticationByEmail($email){
+        $user = 'SELECT * FROM users';
+        $user .= self::addWhereStatement(array("email" => $email));
+        $user = self::runQuery($user)->fetch_object();
+        $authentication = 'SELECT * FROM authentication';
+        $authentication .= self::addWhereStatement(array("secret" => $user->id));
+        $authentication = self::runQuery($authentication)->fetch_object();
+        return $authentication;
+    }
+
     public static function retrieveTokenByEmailAndPassword($email,$password){
         $user = 'SELECT * FROM users';
         $user .= self::addWhereStatement(array("email" => $email));
@@ -133,7 +143,6 @@ class ControllerCore{
                 return $authentication->token;
             }
         }
-        return false;
-        
+        return false;   
     }
 }

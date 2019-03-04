@@ -5,6 +5,9 @@ if ($method=='GET'||$method=='DELETE'){
     $response = $object->$method($data);
     if ($response){
         foreach ($response as $row){
+            foreach ($row as &$element){
+                $element=utf8_encode($element);
+            }
             $results[]=$row;
         }
     } else {

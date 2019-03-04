@@ -17,9 +17,17 @@ class ModelController extends ControllerCore{
         }
         if ($this->tableName=='users'){
             if (array_key_exists('id',$data)){
-                $authentication = ControllerCore::getTokenByUserId($data['id']);
+                $authentication = ControllerCore::getAuthenticationByUserId($data['id']);
                 if (is_object($authentication) && property_exists($authentication,'token') 
-                && $authentication->token == $this->authentication->token){
+                && $authentication->token == $this->authorization->token){
+                    $target = 'Mine';
+                }else{
+                    $target = 'All';
+                }
+            } else if(array_key_exists('email',$data)){
+                $authentication = ControllerCore::getAuthenticationByEmail($data['email']);
+                if (is_object($authentication) && property_exists($authentication,'token') 
+                && $authentication->token == $this->authorization->token){
                     $target = 'Mine';
                 }else{
                     $target = 'All';
@@ -28,19 +36,37 @@ class ModelController extends ControllerCore{
                 $target = 'All';
             }
         } else {
-            if (array_key_exists('id_user',$data)){
-                $authentication = ControllerCore::getTokenByUserId($data['id_user']);
+            if (array_key_exists('idUser',$data)){
+                error_log(print_r($data,1));
+                $authentication = ControllerCore::getAuthenticationByUserId($data->idUser);
                 if (is_object($authentication) && property_exists($authentication,'token') 
-                && $authentication->token == $this->authentication->token){
+                && $authentication->token == $this->authorization->token){
                     $target = 'Mine';
                 }else{
                     $target = 'All';
                 }
             } else {
-                $target = 'All';
+                $elements=$this->GETImportant($data);
+                foreach ($elements as $element){
+                    error_log(print_r($element,1));
+                    if ($element['idUser']){
+                        $authentication = ControllerCore::getAuthenticationByUserId($element['idUser']);
+                        if (is_object($authentication) && property_exists($authentication,'token') 
+                        && $authentication->token == $this->authorization->token){
+                            $target = 'Mine';
+                        }else{
+                            $target = 'All';
+                            break;
+                        }
+                    } else {
+                        $target = 'All';
+                        break;
+                    }
+                }
             }
         }
         $validate='validate'.$function.''.$target;
+        error_log(print_r($validate,1));
         return $this->authorization->$validate();
     }
 
@@ -50,9 +76,15 @@ class ModelController extends ControllerCore{
         return $this->runQuery($query);
     }
 
+    public function GETImportant($data){
+        $query=$this->buildGetQuery($data);
+        return $this->runQuery($query);
+    }
+
     public function POST($data){
         if (!$this->checkPrivileges(__FUNCTION__,$data)) return false;
         $query=$this->buildPostQuery($data);
+        error_log(print_r($query,1));
         return $this->runQuery($query);
     }
     

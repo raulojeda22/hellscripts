@@ -1,7 +1,13 @@
 $(document).ready(function() {
+    var token=Cookies.get('token');
+    var email=Cookies.get('email');
+    var idUser=Cookies.get('idUser');
     $.ajax({
         url: "www/modules/projects/model/projects.php",  //LOAD PROJECTS
         type: 'GET',
+        beforeSend: function (xhr) {
+			xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+		},
         success: function (data) {
             data=JSON.parse(data);
             data.forEach(element => {
@@ -26,6 +32,9 @@ $(document).ready(function() {
                 $.ajax({
                     url: "www/modules/projects/model/projects.php?id="+projectId,
                     type: method,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+                    },
                     success: function (data){
                         data=JSON.parse(data)[0];
                         console.log(data);
@@ -95,16 +104,25 @@ $(document).ready(function() {
                 }
                 object = Object.assign({[name]: value},object);
             });
+            object = Object.assign({idUser: Cookies.get('idUser')},object);
             if (!emptyValue){
                 $.ajax({
                     url: 'www/modules/projects/model/projects.php',
                     type: 'POST',
                     data: {data: JSON.stringify(object)},
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+                    },
                     success: function(data){
                         console.log(data);
+                        window.location.href = 'projects';
                     },
-                    error: function(){
+                    error: function(data){
                         console.log(data);
+                        $('.projectError').html('<h4 class="errorText text-default" >Something went wrong...</h4>');
+                        $('html, body').animate({
+                            scrollTop: $('html').offset().top
+                        }, 500, 'easeInOutExpo');
                     }
                 });
             } else {
@@ -131,6 +149,9 @@ $(document).ready(function() {
         $.ajax({
             url: "www/modules/projects/model/projects.php",
             type: 'DELETE',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+            },
             success: function (data){
                 data=JSON.parse(data)[0];
                 $('#allTableProjectsBody').empty();

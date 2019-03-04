@@ -5,7 +5,11 @@ $(document).ready(function() {
         success: function(data){
             data=JSON.parse(data);
             $.ajax({
-                url: "www/modules/projects/model/projects.php?license="+data.license+"&languages="+data.languages+"&name="+data.name,                                         type: 'GET',
+                url: "www/modules/projects/model/projects.php?license="+data.license+"&languages="+data.languages+"&name="+data.name,
+                type: 'GET',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+                },
                 success: function (data) {
                     data=JSON.parse(data);
                     data.forEach(element => {
@@ -23,6 +27,9 @@ $(document).ready(function() {
                                     $.ajax({
                                         url: "www/modules/projects/model/projects.php?id="+projectId,
                                         type: method,
+                                        beforeSend: function (xhr) {
+                                            xhr.setRequestHeader ("Authorization", Cookies.get('token'));
+                                        },
                                         success: function (data){
                                             data=JSON.parse(data)[0];
                                             $('html, body').animate({
@@ -36,35 +43,6 @@ $(document).ready(function() {
                                                     $('#explorePageContent').html(data);
                                                 }
                                             });
-                                            /*
-                                            if (method=='GET'){
-                                                $.each(data, function(key,value){
-                                                    $('#'+key+'ProjectModal').html(value);
-                                                });
-                                                $("#details_project").show();
-                                                $("#project_modal").dialog({
-                                                    width: 850,
-                                                    height: 500,
-                                                    resizable: "false",
-                                                    modal: "true",
-                                                    buttons: {
-                                                        Ok: function () {
-                                                            $(this).dialog("close");
-                                                        }
-                                                    },
-                                                    show: {
-                                                        effect: "blind",
-                                                        duration: 1000
-                                                    },
-                                                    hide: {
-                                                        effect: "explode",
-                                                        duration: 1000
-                                                    }
-                                                });
-                                            } else if(method=='DELETE'){
-                                                parent.remove();
-                                            }
-                                            */
                                         },
                                         error: function (data){
                                             console.log(data);
