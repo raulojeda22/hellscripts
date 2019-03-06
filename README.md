@@ -43,7 +43,7 @@ Finally you should create the tables located on the /backend/mwb/hellscripts.mwb
 License
 ----
 
-[GNU](https://www.gnu.org/licenses/gpl-3.0.html)
+[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)
 
 
 **Free Software, Hell Yeah!**
