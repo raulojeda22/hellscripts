@@ -24,7 +24,7 @@
                         <button id="createProject" type="button" class="btn btn-primary">Create project</button>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div id="resetApp" class="col-md-6">
                     <div class="col-md-12 section-heading probootstrap-animate">
                         <h2 class="mb20">RESET APP</h2>
                         <button id="deleteAllProjects" type="button" class="btn btn-primary">Remove all projects</button>

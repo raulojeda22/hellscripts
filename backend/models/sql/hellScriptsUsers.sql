@@ -1,9 +1,0 @@
-CREATE TABLE IF NOT EXISTS `hellscripts`.`users` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NOT NULL,
-  `name` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(200) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `avatar` VARCHAR(1000) NULL,
-  `admin` TINYINT(1) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`));
