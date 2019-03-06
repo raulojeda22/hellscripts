@@ -24,6 +24,53 @@ Hell Scripts uses a number of open source projects to work properly:
 * jQuery
 * SQL
 
+### Features
+
+<table width="673">
+<tbody>
+<tr>
+<td style="text-align:center;" width="183" bgcolor="#CCFFFF"><strong>PAGE</strong></td>
+<td style="text-align:center;" bgcolor="#CCFFFF"><strong>Features</strong></td>
+</tr>
+<tr>
+<td style="text-align:center;" >Home</td>
+<td style="text-align:center;" bgcolor="#CCFFFF">Carousel, Filters Search, Projects, Github API</td>
+</tr>
+<tr>
+<td style="text-align:center;">Explore</td>
+<td style="text-align:center;">List, Details, Github API</td>
+</tr>
+<tr>
+<td style="text-align:center;">Projects</td>
+<td style="text-align:center;">Datatable, modal, validation PHP/JS, CRUD, DELETE ALL, Get Projects owned by User, The user can also create his projects, Admin features, Redirect non registered user</td>
+</tr>
+<tr>
+<td style="text-align:center;">JqWidgets</td>
+<td style="text-align:center;">CSS to dark-red theme</td>
+</tr>
+<tr>
+<td style="text-align:center;">Login</td>
+<td style="text-align:center;">Register, Login, Logout, validation PHP / JS, encrypt passwd, avatar, Enter, Token based Auth</td>
+</tr>
+<tr>
+<td style="text-align:center;">Contact</td>
+<td style="text-align:center;">GMaps, Hide key, CSS dark-red theme</td>
+</tr>
+ <tr>
+<td style="text-align:center;">Profile</td>
+<td style="text-align:center;">User Info, Projects created by the user, Redirect non registered user</td>
+</tr>
+<tr>
+<td style="text-align:center;">Cart</td>
+<td style="text-align:center;"></td>
+</tr>
+<tr>
+<td style="text-align:center;">Application</td>
+<td style="text-align:center;">Template, 404, MVC, Github: readme, .gitignore, constants, API PHP Database Object Framework</td>
+</tr>
+</tbody>
+</table>
+
 ### Installation
 You will need a LAMP server with Apache, PHP 7, and MySQL. You can use this [tutorial](https://www.howtoforge.com/tutorial/install-apache-with-php-and-mysql-on-ubuntu-16-04-lamp/).
 
