@@ -6,6 +6,7 @@
         <div class="probootstrap-card-text">
             <div class="row text-center" id="project<? echo $_POST['data']['id']; ?>">
                 <button class="btn btn-primary btn-sm projectGet" name="GET">Show</button>
+                <button class="btn btn-primary btn-sm cartPost" data-id="<? echo $_POST['data']['id']; ?>" name="POST"><i class="icon-cart"></i></button>
             </div>
             <h4 ><? echo $_POST['data']['name']; ?></h4>
             <h6 class="category"><? echo $_POST['data']['languages']; ?></h6>

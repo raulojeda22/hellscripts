@@ -14,7 +14,7 @@ if ($method=='GET'||$method=='DELETE'){
         header('HTTP/1.0 403 Forbidden');
         die();
     }
-} else {
+} else if ($method=='POST'||$method=='PUT'){
     $data=json_decode($_POST['data']);
     $response = $object->$method($data);
     if ($response){
@@ -23,4 +23,7 @@ if ($method=='GET'||$method=='DELETE'){
         header('HTTP/1.0 403 Forbidden');
         die();
     }
+} else {
+    header('HTTP/1.0 403 Forbidden');
+    die();
 }

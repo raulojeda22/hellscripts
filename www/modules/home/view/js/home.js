@@ -18,7 +18,6 @@ $(document).ready(function() {
             type: "POST",
             data: { params: {license: license, languages: languages, name: name} },
             success: function(data){
-                console.log(data);
                 window.location.href = 'explore';
             },
             error: function(data){
@@ -36,7 +35,6 @@ $(document).ready(function() {
         if (typeof names == undefined || name==''){
             name='!!';
         }
-        console.log(license,languages,name);
         $.ajax({
             url: "www/modules/projects/model/projects.php?license="+license+"&languages="+languages+"&name="+name,
             type: 'GET',
@@ -94,7 +92,6 @@ $(document).ready(function() {
 			xhr.setRequestHeader ("Authorization", Cookies.get('token'));
 		},
         success: function (data) {
-            console.log(data);
             anySearchChange(license,languages,name);
             data=JSON.parse(data);
             data.forEach(element => {
@@ -111,7 +108,9 @@ $(document).ready(function() {
                     }
                 });
             });
-            
+
+            $('#allHomeProjects').append('<script src="www/modules/cart/view/js/functionsCart.js"></script>');
+
             $('#licenseSearch').change(function(){
                 license=$(this).val();
                 languages=$('#languagesSearch').val();
@@ -204,7 +203,6 @@ $(document).ready(function() {
                     url: "https://api.github.com/repos/"+projectId,
                     type: method,
                     success: function (data){
-                        console.log(data);
                         var object = {};
                         object = Object.assign({image: data.owner.avatar_url},object);
                         object = Object.assign({description: data.description},object);

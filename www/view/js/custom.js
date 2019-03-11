@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
 				data = JSON.parse(data)[0];
 				$('#userButton').html('<button class="btn btn-primary btn-sm btn-link logout">Log out <i class="icon-user"></i></button>')
 				$('#userInfo').html('<h4>'+data.email+' <img src="https://api.adorable.io/avatars/40/'+data.email+'"/></h4>')
-
+				$('#cartLink').attr("href", 'cart');
 				$('.logout').click(function (){
 					Cookies.remove('email');
 					Cookies.remove('token');

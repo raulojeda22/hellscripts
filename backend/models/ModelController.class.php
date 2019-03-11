@@ -3,7 +3,7 @@ include_once _PROJECT_PATH_.'/backend/models/ControllerCore.class.php';
 include_once _PROJECT_PATH_.'/backend/controllers/Authorization.class.php';
 class ModelController extends ControllerCore{
 
-    protected $authorization;
+    public $authorization;
 
     public function __construct($token){
         $this->authorization = new Authorization($token,$this->tableName);
@@ -37,7 +37,6 @@ class ModelController extends ControllerCore{
             }
         } else {
             if (array_key_exists('idUser',$data)){
-                error_log(print_r($data,1));
                 $authentication = ControllerCore::getAuthenticationByUserId($data->idUser);
                 if (is_object($authentication) && property_exists($authentication,'token') 
                 && $authentication->token == $this->authorization->token){
@@ -66,7 +65,6 @@ class ModelController extends ControllerCore{
             }
         }
         $validate='validate'.$function.''.$target;
-        error_log(print_r($validate,1));
         return $this->authorization->$validate();
     }
 
@@ -84,7 +82,6 @@ class ModelController extends ControllerCore{
     public function POST($data){
         if (!$this->checkPrivileges(__FUNCTION__,$data)) return false;
         $query=$this->buildPostQuery($data);
-        error_log(print_r($query,1));
         return $this->runQuery($query);
     }
     

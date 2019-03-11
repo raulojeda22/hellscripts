@@ -277,3 +277,6 @@ body {
   }
 }
 
+.pull-right {
+  float: right !important;
+}

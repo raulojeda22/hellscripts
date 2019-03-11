@@ -17,7 +17,10 @@
             <label for="image">Image url*</label>
             <input type="url" class="form-control projectFormElement" id="image" name="image" placeholder="https://screenshotlayer.com/images/assets/placeholder.png">
         </div>
-        
+        <div class="form-group">
+            <label for="price">Price*</label>
+            <input type="number" class="form-control projectFormElement" id="price" name="price" placeholder="50">
+        </div>
         <div class="form-group">
             <label>License</label>
             <select class="form-control projectFormElement" name="license" id="license">

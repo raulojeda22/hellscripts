@@ -20,7 +20,8 @@ class FrontController {
             'profile',
             'contact',
             'explore',
-            'users'
+            'users',
+            'cart'
         );
         return $allowedPages;
     }
