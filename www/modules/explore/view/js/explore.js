@@ -16,6 +16,7 @@ $(document).ready(function() {
                         $.ajax({
                             url: "www/modules/projects/view/projectDiv.php", //SHOW PROJECTS
                             type: 'POST',
+                            async: false,
                             data: { data: element},
                             success: function(data) {
                                 $('#exploreProjects').append(data);
@@ -27,6 +28,7 @@ $(document).ready(function() {
                                     $.ajax({
                                         url: "www/modules/projects/model/projects.php?id="+projectId,
                                         type: method,
+                                        async: false,
                                         beforeSend: function (xhr) {
                                             xhr.setRequestHeader ("Authorization", Cookies.get('token'));
                                         },
@@ -38,6 +40,7 @@ $(document).ready(function() {
                                             $.ajax({
                                                 url: "www/modules/projects/view/projectPage.php",
                                                 type: 'POST',
+                                                async: false,
                                                 data: { data: data},
                                                 success: function (data){
                                                     $('#explorePageContent').html(data);
@@ -55,6 +58,7 @@ $(document).ready(function() {
                             }
                         });
                     });
+                    $('#exploreProjects').append('<script src="www/modules/cart/view/js/functionsCart.js"></script>');
                 },
                 error: function(data){
                     console.log(data);

@@ -133,8 +133,6 @@ $(document).ready(function() {
             $('#projectSearch').click(function(){
                 setSearchParams();
             });
-//
-
             $(".projectGet").click(function(){  //GET PROJECTS
                 var parent=$(this).parent();
                 var projectId=parent.attr('id').replace('project','');
@@ -157,6 +155,7 @@ $(document).ready(function() {
                             data: { data: data},
                             success: function (data){
                                 $('#homePageContent').html(data);
+                                $('#homePageContent').append('<script src="www/modules/cart/view/js/functionsCart.js"></script>');
                             }
                         });
                     },

@@ -2,6 +2,7 @@
 <script src="<? echo _PROJECT_URL_ ?>/view/js/scripts.min.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
 <script src="<? echo _PROJECT_URL_ ?>/view/js/main.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
 <script src="<? echo _PROJECT_URL_ ?>/view/js/custom.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
+<script src="<? echo _PROJECT_URL_ ?>/view/js/translator.js?jsVersion=<? echo _JS_VERSION_ ?>"></script>
 
 
 

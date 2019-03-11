@@ -5,8 +5,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text">
-              <h4>Join other developers.</h4>
-              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary btn-sm">Start now!</a></p>
+              <h4 class="translate" data-original="Join other developers." >Join other developers.</h4>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary btn-sm translate" data-original="Start now!">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -17,8 +17,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text">
-              <h3>Help build something big.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
+              <h3 class="translate" data-original="Help build something big.">Help build something big.</h3>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary translate" data-original="Start now!">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -29,8 +29,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text">
-              <h3>Learn and share knowledge.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
+              <h3 class="translate" data-original="Learn and share knowledge." >Learn and share knowledge.</h3>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary translate" data-original="Start now!">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text">
-              <h3>Improve the world with your contributions.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
+              <h3 class="translate" data-original="Improve the world with your contributions." >Improve the world with your contributions.</h3>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary translate" data-original="Start now!">Start now!</a></p>
             </div>
           </div>
         </div>
@@ -53,8 +53,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="slides-text">
-              <h3>Start your own project and get helped by the community.</h3>
-              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary">Start now!</a></p>
+              <h3 class="translate" data-original="Start your own project and get helped by the community." >Start your own project and get helped by the community.</h3>
+              <p><a href="<? echo _PUBLIC_URL_.'/projects' ?>" class="btn btn-primary translate" data-original="Start now!">Start now!</a></p>
             </div>
           </div>
         </div>

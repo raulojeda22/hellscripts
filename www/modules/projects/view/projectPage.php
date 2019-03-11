@@ -12,6 +12,7 @@
                 <p><img src="<? echo $_POST['data']['image']?>" alt="" class="img-responsive img-border"></p>
                 <h2><? echo $_POST['data']['languages']?></h2>
                 <p><? echo $_POST['data']['description']?></p>
+                <button class="btn btn-primary btn-sm cartPost" data-id="<? echo $_POST['data']['id']; ?>" name="POST"><i class="icon-cart"></i></button>
             </div>
             <div class="col-md-3">
                 <div class="panel-group probootstrap-panel" id="accordion" role="tablist" aria-multiselectable="true">

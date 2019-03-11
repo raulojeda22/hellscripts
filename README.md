@@ -62,7 +62,7 @@ Hell Scripts uses a number of open source projects to work properly:
 </tr>
 <tr>
 <td style="text-align:center;">Cart</td>
-<td style="text-align:center;"></td>
+<td style="text-align:center;">Add in home,list and details, validation PHP/JS and checkout</td>
 </tr>
 <tr>
 <td style="text-align:center;">Application</td>
