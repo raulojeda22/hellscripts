@@ -80,6 +80,9 @@ You can also change the SQL configuration on the /backend/models/Connection.clas
 
 Finally you should create the tables located on the /backend/mwb/hellscripts.mwb file (You will need to open it using [MySql Workbench](https://www.mysql.com/products/workbench/))
 
+### BBDD
+
+![alt text](https://raw.githubusercontent.com/raulojeda22/hellscripts/master/backend/models/mwb/databaseScheme.png)
 
 ### Todos
 
